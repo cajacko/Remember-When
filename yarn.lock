@@ -87,11 +87,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/lib@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-2.2.2.tgz#319b9bdaf63ea445bece259312fec206d8778d77"
+"@cajacko/lib@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-2.3.0.tgz#d1a25899817575c58dc0b1050fa34212dbde0565"
   dependencies:
-    "@cajacko/template" "0.3.0"
+    "@cajacko/template" "0.4.1"
     "@octokit/rest" "^15.8.2"
     babel-cli "^6.26.0"
     babel-plugin-styled-components "^1.5.1"
@@ -118,9 +118,9 @@
     validator "^10.3.0"
     watch "^1.0.2"
 
-"@cajacko/template@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.3.0.tgz#b6a6969f9299a3ecaa79eac8e1ccc61a580bde3c"
+"@cajacko/template@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.4.1.tgz#c05e4aba15308babce1108a7982169235a8db295"
   dependencies:
     commander "^2.16.0"
     ejs "^2.6.1"
