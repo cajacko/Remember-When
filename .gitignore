@@ -1,40 +1,28 @@
-# OSX
-#
+# npm stuff
+node_modules
+
+# Build dirs
+/build
+/dist
+
+# Temp dirs
+tmp
+temp
+
+# For sass compiled bits
+src/components/**/*.css
+src/constants/**/*.css
+
+# Env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Platform specific
 .DS_Store
 
-# Xcode
-#
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-project.xcworkspace
-
-# Android/IJ
-#
-.idea
-.gradle
-local.properties
-
-# node.js
-#
-node_modules/
-npm-debug.log
-
-# BUCK
-buck-out/
-\.buckd/
-android/app/libs
-android/keystores/debug.keystore
+# Misc
+/coverage
+/docs
+*.log
