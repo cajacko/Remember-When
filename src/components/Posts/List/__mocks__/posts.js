@@ -5,8 +5,10 @@ const posts = [];
 for (let i = 0; i < 50; i += 1) {
   posts.push({
     id: `${i}`,
-    text: 'Example content of some sort that we will talk about',
-    date: new Date(),
+    key: `${i}`,
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....',
+    date: new Date(2018, 6, i),
   });
 }
 
