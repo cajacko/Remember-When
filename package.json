@@ -1,7 +1,7 @@
 {
-  "name": "weewee",
+  "name": "remember-when",
   "version": "0.1.0",
-  "description": "Example project",
+  "description": "App for recording and sharing the best moments in your life",
   "license": "MIT",
   "scripts": {
     "start": "lib start",

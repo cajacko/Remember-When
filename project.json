@@ -1,15 +1,15 @@
 {
-  "title": "Example",
-  "slug": "example",
-  "description": "Example description.",
+  "title": "Remember When",
+  "slug": "remember-when",
+  "description": "App for recording and sharing the best moments in your life",
   "authorName": "Charlie Jackson",
   "authorUrl": "https://charliejackson.com",
   "authorEmail": "contact@charliejackson.com",
   "license": "MIT",
   "templates": {
-    "main-site": {
+    "main-app": {
       "entryFile": "src/entry.js",
-      "type": "website"
+      "type": "mobile-app"
     }
   }
 }
