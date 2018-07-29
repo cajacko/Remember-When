@@ -1,12 +1,8 @@
 // @flow
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import PostsList from '../Posts/List';
 
-const App = () => (
-  <View>
-    <Text>Hello</Text>
-  </View>
-);
+const App = () => <PostsList />;
 
 export default App;
