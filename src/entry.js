@@ -1,5 +1,19 @@
 // @flow
 
-import App from './components/App';
+import { ScenePost, SceneHome, SceneUnknown } from './components/Scenes';
 
-export const ENTRY_COMPONENT = App;
+export const ROUTES = [
+  {
+    path: '/',
+    exact: true,
+    component: SceneHome,
+  },
+  {
+    path: '/post/:id',
+    exact: true,
+    component: ScenePost,
+  },
+  {
+    component: SceneUnknown,
+  },
+];
