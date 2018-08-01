@@ -1,3 +1,3 @@
 // @flow
 
-export { default } from './Single.render';
+export { default } from './Single.container';
