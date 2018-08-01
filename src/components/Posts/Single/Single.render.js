@@ -1,16 +1,17 @@
 // @flow
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import Text from '@cajacko/lib/dist/components/Text';
-import Header from '@cajacko/lib/dist/components/Header';
+import HeaderWithContent from '@cajacko/lib/dist/components/Layout/HeaderWithContent';
 import { format } from '@cajacko/lib/dist/utils/dates';
 
 const PostsSingle = ({ content, date, history: { goBack } }) => (
-  <Fragment>
-    <Header back={goBack} title={format('date', new Date())} />
+  <HeaderWithContent
+    header={{ back: goBack, title: format('date', new Date()) }}
+  >
     <Text text={content} type="body1" />
-  </Fragment>
+  </HeaderWithContent>
 );
 
 export default withRouter(PostsSingle);
