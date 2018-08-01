@@ -87,9 +87,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/lib@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-2.3.0.tgz#d1a25899817575c58dc0b1050fa34212dbde0565"
+"@cajacko/lib@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-2.4.0.tgz#8f50a538f049de4b4c8f4a83fb6fa2f5e49e0ac4"
   dependencies:
     "@cajacko/template" "0.4.1"
     "@octokit/rest" "^15.8.2"
