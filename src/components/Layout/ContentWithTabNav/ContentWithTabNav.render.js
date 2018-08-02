@@ -8,6 +8,7 @@ import { HOME, PLUS } from '@cajacko/lib/dist/config/icons';
 const ContentWithTabNav = ({ children, history: { push } }) => (
   <CJContentWithTabNav
     tabNav={{
+      isActive: ({ text }) => text === 'Home',
       items: [
         {
           key: '1',
