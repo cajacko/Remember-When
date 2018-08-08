@@ -6,7 +6,7 @@ const isTabNavItemActive = ({ pathname }) => ({ text }) => {
       if (pathname === '/') return true;
       break;
     case 'Add':
-      if (pathname === '/newPost') return true;
+      if (pathname === '/post/new') return true;
       break;
     default:
       return false;

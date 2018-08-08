@@ -13,6 +13,6 @@ export default [
     key: '2',
     text: 'Add',
     icon: PLUS,
-    route: '/newPost',
+    route: '/post/new',
   },
 ];
