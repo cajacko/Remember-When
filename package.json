@@ -12,7 +12,7 @@
     "precommit": "lib precommit"
   },
   "devDependencies": {
-    "@cajacko/lib": "2.4.0",
+    "@cajacko/lib": "2.5.0",
     "babel-eslint": "8.2.2",
     "eslint": "4.18.1",
     "eslint-config-airbnb": "16.1.0",
