@@ -19,7 +19,4 @@ export const WITHIN_TAB = [
     exact: true,
     component: Scenes.ScenePost,
   },
-  {
-    component: Scenes.SceneUnknown,
-  },
 ];
