@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
-import Single from './Single.render';
+import Single from './Single.component';
 import { content, date } from './__mocks__/content';
 import isPostInEditMode from '../../../utils/conditionals/isPostInEditMode';
 
