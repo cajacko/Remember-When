@@ -20,10 +20,12 @@ class PostsSingleComponent extends Component {
 
     this.state = {
       content: props.content || '',
+      editing: this.isNewPost(props),
     };
 
     this.onChange = this.onChange.bind(this);
     this.save = this.save.bind(this);
+    this.edit = this.edit.bind(this);
   }
 
   componentWillReceiveProps({ content }) {
@@ -41,15 +43,26 @@ class PostsSingleComponent extends Component {
 
     if (this.isNewPost()) {
       this.props.history.push('/');
+    } else {
+      this.setState({ editing: false });
     }
   }
 
-  isNewPost() {
-    return this.props.location.pathname === '/post/new' || !this.props.id;
+  edit() {
+    this.setState({ editing: true });
   }
 
-  isPostInEditMode() {
-    return this.isNewPost();
+  isNewPost(props) {
+    const {
+      location: { pathname },
+      id,
+    } = props || this.props;
+
+    return pathname === '/post/new' || !id;
+  }
+
+  isPostInEditMode(props) {
+    return this.state.editing || this.isNewPost(props);
   }
 
   /**
@@ -58,6 +71,8 @@ class PostsSingleComponent extends Component {
    * @return {ReactElement} Markup to render
    */
   render() {
+    console.log(this.state, this.props);
+
     return (
       <PostsSingle
         onChange={this.onChange}
@@ -65,6 +80,7 @@ class PostsSingleComponent extends Component {
         isInEditMode={this.isPostInEditMode()}
         date={this.props.date || new Date()}
         save={this.save}
+        edit={this.edit}
       />
     );
   }

@@ -13,13 +13,14 @@ const PostsSingle = ({
   isInEditMode,
   onChange,
   save,
+  edit,
 }) => (
   <HeaderWithContent
     header={{
       back: goBack,
       title: format('date', new Date()),
-      rightText: isInEditMode && 'Save',
-      rightAction: isInEditMode && save,
+      rightText: isInEditMode ? 'Save' : 'Edit',
+      rightAction: isInEditMode ? save : edit,
     }}
   >
     <TextArea
