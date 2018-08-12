@@ -1,17 +1,22 @@
 // @flow
 
-import addItemToMapAndList from '@cajacko/lib/dist/utils/immutable/addItemToMapAndList';
 import createReducer from '@cajacko/lib/dist/utils/createReducer';
+import { fromJS, Map } from 'immutable';
 import defaultState from './__mocks__/posts';
 import { SAVE_POST_ACTION } from './actions';
 
-export default createReducer(defaultState, {
+const initialState = fromJS(defaultState);
+
+export default createReducer(initialState, {
   [SAVE_POST_ACTION]: (state, {
     id, content, date, isNewPost,
-  }) =>
-    addItemToMapAndList({ id, content, date }, state, {
-      idMapKey: 'postsByID',
-      listKey: 'list',
-      skipAddToList: !isNewPost,
-    }),
+  }) => {
+    let newState = state;
+
+    if (isNewPost) {
+      newState = newState.set('list', newState.get('list').unshift(id));
+    }
+
+    return newState.setIn(['postsByID', id], Map({ id, content, date }));
+  },
 });

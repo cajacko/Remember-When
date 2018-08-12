@@ -71,8 +71,6 @@ class PostsSingleComponent extends Component {
    * @return {ReactElement} Markup to render
    */
   render() {
-    console.log(this.state, this.props);
-
     return (
       <PostsSingle
         onChange={this.onChange}
