@@ -25,6 +25,12 @@ class PostsSingleComponent extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  componentWillReceiveProps({ content }) {
+    if (content !== this.props.content) {
+      this.setState({ content });
+    }
+  }
+
   onChange(text) {
     this.setState({ content: text });
   }

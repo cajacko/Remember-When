@@ -8,7 +8,7 @@ import isPostInEditMode from '../../../utils/conditionals/isPostInEditMode';
 
 const SingleContainer = ({ location: { pathname } }) => (
   <Single
-    content={content}
+    content={isPostInEditMode(pathname) ? '' : content}
     date={date}
     isInEditMode={isPostInEditMode(pathname)}
   />

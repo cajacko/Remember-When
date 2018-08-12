@@ -22,7 +22,12 @@ const PostsSingle = ({
       rightAction: isInEditMode && save,
     }}
   >
-    <TextArea value={content} canEdit={isInEditMode} onChange={onChange} />
+    <TextArea
+      value={content}
+      editable={isInEditMode}
+      onChange={onChange}
+      autoFocus={isInEditMode}
+    />
   </HeaderWithContent>
 );
 
