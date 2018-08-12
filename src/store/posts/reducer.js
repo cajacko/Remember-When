@@ -1,5 +1,6 @@
 // @flow
 
+import addItemToMapAndList from '@cajacko/lib/dist/utils/immutable/addItemToMapAndList';
 import defaultState from './__mocks__/posts';
 import { SAVE_POST_ACTION } from './actions';
 
@@ -7,21 +8,14 @@ const postsReducer = (state = defaultState, { type, payload }) => {
   switch (type) {
     case SAVE_POST_ACTION: {
       const { id, content, date } = payload;
-      const newState = Object.assign({}, state);
 
-      const list = newState.list.slice();
-
-      list.unshift(id);
-
-      newState.list = list;
-
-      newState.postsByID[id] = {
+      return addItemToMapAndList(
         id,
-        content,
-        date,
-      };
-
-      return newState;
+        { id, content, date },
+        state,
+        'postsByID',
+        'list'
+      );
     }
 
     default:
