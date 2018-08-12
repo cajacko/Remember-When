@@ -1,9 +1,10 @@
 // @flow
 
-import React from 'react';
-import PostsList from './List.component';
-import posts from './__mocks__/posts';
+import { connect } from '@cajacko/lib/dist/lib/react-redux';
+import PostsList from './List.render';
 
-const PostsListContainer = () => <PostsList posts={posts} />;
+export const mapStateToProps = ({ posts: { list } }) => ({
+  posts: list.map(id => ({ key: id, id })),
+});
 
-export default PostsListContainer;
+export default connect(mapStateToProps)(PostsList);

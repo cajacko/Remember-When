@@ -1,8 +1,7 @@
 // @flow
 
-const postsReducer = () => ({
-  postsByID: {},
-  list: [],
-});
+import defaultState from './__mocks__/posts';
+
+const postsReducer = () => defaultState;
 
 export default postsReducer;
