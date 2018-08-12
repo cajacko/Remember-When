@@ -12,9 +12,15 @@ const PostsSingle = ({
   history: { goBack },
   isInEditMode,
   onChange,
+  save,
 }) => (
   <HeaderWithContent
-    header={{ back: goBack, title: format('date', new Date()) }}
+    header={{
+      back: goBack,
+      title: format('date', new Date()),
+      rightText: isInEditMode && 'Save',
+      rightAction: isInEditMode && save,
+    }}
   >
     <TextArea value={content} canEdit={isInEditMode} onChange={onChange} />
   </HeaderWithContent>

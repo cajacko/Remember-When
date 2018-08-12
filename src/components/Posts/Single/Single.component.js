@@ -29,6 +29,10 @@ class PostsSingleComponent extends Component {
     this.setState({ content: text });
   }
 
+  save() {
+    console.log('Save');
+  }
+
   /**
    * Render the component
    *
@@ -41,6 +45,7 @@ class PostsSingleComponent extends Component {
         content={this.state.content}
         isInEditMode={this.props.isInEditMode}
         date={this.props.date}
+        save={this.save}
       />
     );
   }
