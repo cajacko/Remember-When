@@ -26,6 +26,7 @@ class PostsSingleComponent extends Component {
     this.onChange = this.onChange.bind(this);
     this.save = this.save.bind(this);
     this.edit = this.edit.bind(this);
+    this.deletePost = this.deletePost.bind(this);
   }
 
   componentWillReceiveProps({ content }) {
@@ -69,6 +70,12 @@ class PostsSingleComponent extends Component {
     console.log('showDatePicker');
   }
 
+  deletePost() {
+    this.props.delete(this.props.id);
+
+    this.props.history.push('/');
+  }
+
   /**
    * Render the component
    *
@@ -84,6 +91,8 @@ class PostsSingleComponent extends Component {
         save={this.save}
         edit={this.edit}
         showDatePicker={this.showDatePicker}
+        deletePost={this.deletePost}
+        isNewPost={this.isNewPost()}
       />
     );
   }

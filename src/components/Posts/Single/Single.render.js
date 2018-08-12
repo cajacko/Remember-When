@@ -5,6 +5,7 @@ import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import TextArea from '@cajacko/lib/dist/components/Forms/TextArea';
 import HeaderWithContent from '@cajacko/lib/dist/components/Layout/HeaderWithContent';
 import { format } from '@cajacko/lib/dist/utils/dates';
+import Button from '@cajacko/lib/dist/components/Button';
 
 const PostsSingle = ({
   content,
@@ -15,6 +16,8 @@ const PostsSingle = ({
   save,
   edit,
   showDatePicker,
+  deletePost,
+  isNewPost,
 }) => (
   <HeaderWithContent
     header={{
@@ -32,6 +35,15 @@ const PostsSingle = ({
       onChange={onChange}
       autoFocus={isInEditMode}
     />
+    {isInEditMode &&
+      !isNewPost && (
+        <Button
+          action={deletePost}
+          text="Delete"
+          type="CONTAINED"
+          theme="PRIMARY"
+        />
+      )}
   </HeaderWithContent>
 );
 
