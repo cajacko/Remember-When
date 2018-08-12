@@ -6,6 +6,7 @@ import TextArea from '@cajacko/lib/dist/components/Forms/TextArea';
 import HeaderWithContent from '@cajacko/lib/dist/components/Layout/HeaderWithContent';
 import { format } from '@cajacko/lib/dist/utils/dates';
 import Button from '@cajacko/lib/dist/components/Button';
+import Align from '@cajacko/lib/dist/components/Layout/Align';
 
 const PostsSingle = ({
   content,
@@ -37,12 +38,14 @@ const PostsSingle = ({
     />
     {isInEditMode &&
       !isNewPost && (
-        <Button
-          action={deletePost}
-          text="Delete"
-          type="CONTAINED"
-          theme="PRIMARY"
-        />
+        <Align centerHorizontally>
+          <Button
+            action={deletePost}
+            text="Delete"
+            type="CONTAINED"
+            theme="SECONDARY"
+          />
+        </Align>
       )}
   </HeaderWithContent>
 );
