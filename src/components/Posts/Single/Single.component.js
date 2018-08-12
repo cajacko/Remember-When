@@ -38,10 +38,18 @@ class PostsSingleComponent extends Component {
 
   save() {
     this.props.save(this.props.id, this.state.content);
+
+    if (this.isNewPost()) {
+      this.props.history.push('/');
+    }
+  }
+
+  isNewPost() {
+    return this.props.location.pathname === '/post/new' || !this.props.id;
   }
 
   isPostInEditMode() {
-    return this.props.location.pathname === '/post/new';
+    return this.isNewPost();
   }
 
   /**
