@@ -14,6 +14,7 @@ const PostsSingle = ({
   onChange,
   save,
   edit,
+  showDatePicker,
 }) => (
   <HeaderWithContent
     header={{
@@ -21,6 +22,8 @@ const PostsSingle = ({
       title: format('date', new Date()),
       rightText: isInEditMode ? 'Save' : 'Edit',
       rightAction: isInEditMode ? save : edit,
+      titleAction: showDatePicker,
+      noButton: !isInEditMode,
     }}
   >
     <TextArea

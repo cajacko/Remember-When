@@ -65,6 +65,10 @@ class PostsSingleComponent extends Component {
     return this.state.editing || this.isNewPost(props);
   }
 
+  showDatePicker() {
+    console.log('showDatePicker');
+  }
+
   /**
    * Render the component
    *
@@ -79,6 +83,7 @@ class PostsSingleComponent extends Component {
         date={this.props.date || new Date()}
         save={this.save}
         edit={this.edit}
+        showDatePicker={this.showDatePicker}
       />
     );
   }
