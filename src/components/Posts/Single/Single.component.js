@@ -19,10 +19,11 @@ class PostsSingleComponent extends Component {
     super(props);
 
     this.state = {
-      content: props.content,
+      content: props.content || '',
     };
 
     this.onChange = this.onChange.bind(this);
+    this.save = this.save.bind(this);
   }
 
   componentWillReceiveProps({ content }) {
@@ -36,7 +37,11 @@ class PostsSingleComponent extends Component {
   }
 
   save() {
-    console.log('Save');
+    this.props.save(this.props.id, this.state.content);
+  }
+
+  isPostInEditMode() {
+    return this.props.location.pathname === '/post/new';
   }
 
   /**
@@ -48,9 +53,9 @@ class PostsSingleComponent extends Component {
     return (
       <PostsSingle
         onChange={this.onChange}
-        content={this.state.content}
-        isInEditMode={this.props.isInEditMode}
-        date={this.props.date}
+        content={this.state.content || ''}
+        isInEditMode={this.isPostInEditMode()}
+        date={this.props.date || new Date()}
         save={this.save}
       />
     );
