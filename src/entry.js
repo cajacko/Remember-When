@@ -3,6 +3,7 @@
 import safeAreaViewSubscriptions from '@cajacko/lib/dist/utils/safeAreaViewSubscriptions';
 import { BLACK } from '@cajacko/lib/dist/config/styles/colors';
 import { ENTRY } from './config/routes';
+import reducers from './store/reducers';
 
 safeAreaViewSubscriptions.set(null, null, {
   topColor: BLACK,
@@ -12,3 +13,5 @@ safeAreaViewSubscriptions.set(null, null, {
 });
 
 export const ROUTES = ENTRY;
+
+export const REDUCERS = reducers;
