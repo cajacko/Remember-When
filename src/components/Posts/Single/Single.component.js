@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import withDatePicker from '@cajacko/lib/dist/components/HOCs/withDatePicker';
 import PostsSingle from './Single.render';
 
 /**
@@ -21,17 +22,29 @@ class PostsSingleComponent extends Component {
     this.state = {
       content: props.content || '',
       editing: this.isNewPost(props),
+      date: props.date || new Date(),
     };
 
     this.onChange = this.onChange.bind(this);
     this.save = this.save.bind(this);
     this.edit = this.edit.bind(this);
     this.deletePost = this.deletePost.bind(this);
+    this.showDatePicker = this.showDatePicker.bind(this);
   }
 
-  componentWillReceiveProps({ content }) {
+  componentWillReceiveProps({ content, date }) {
+    const state = {};
+
     if (content !== this.props.content) {
-      this.setState({ content });
+      state.content = content;
+    }
+
+    if (date !== this.props.date) {
+      state.date = date;
+    }
+
+    if (Object.keys(state).length) {
+      this.setState(state);
     }
   }
 
@@ -67,7 +80,13 @@ class PostsSingleComponent extends Component {
   }
 
   showDatePicker() {
-    console.log('showDatePicker');
+    this.props.datePicker.showDatePicker({
+      date: this.props.date || new Date(),
+      mode: 'date',
+      onDateChange: (date) => {
+        this.setState({ date });
+      },
+    });
   }
 
   deletePost() {
@@ -87,7 +106,7 @@ class PostsSingleComponent extends Component {
         onChange={this.onChange}
         content={this.state.content || ''}
         isInEditMode={this.isPostInEditMode()}
-        date={this.props.date || new Date()}
+        date={this.state.date}
         save={this.save}
         edit={this.edit}
         showDatePicker={this.showDatePicker}
@@ -98,4 +117,4 @@ class PostsSingleComponent extends Component {
   }
 }
 
-export default PostsSingleComponent;
+export default withDatePicker(PostsSingleComponent);
