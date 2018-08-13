@@ -53,7 +53,7 @@ class PostsSingleComponent extends Component {
   }
 
   save() {
-    this.props.save(this.props.id, this.state.content);
+    this.props.save(this.props.id, this.state.content, this.state.date);
 
     if (this.isNewPost()) {
       this.props.history.push('/');
