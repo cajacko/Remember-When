@@ -23,7 +23,7 @@ const PostsSingle = ({
   <HeaderWithContent
     header={{
       back: goBack,
-      title: format('date', new Date()),
+      title: format('fullDate', date),
       rightText: isInEditMode ? 'Save' : 'Edit',
       rightAction: isInEditMode ? save : edit,
       titleAction: showDatePicker,
