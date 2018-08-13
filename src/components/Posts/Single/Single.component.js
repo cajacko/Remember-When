@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import withDatePicker from '@cajacko/lib/dist/components/HOCs/withDatePicker';
+import { ensureDate } from '@cajacko/lib/dist/utils/dates';
 import PostsSingle from './Single.render';
 
 /**
@@ -22,7 +23,7 @@ class PostsSingleComponent extends Component {
     this.state = {
       content: props.content || '',
       editing: this.isNewPost(props),
-      date: props.date || new Date(),
+      date: ensureDate(props.date, new Date()),
     };
 
     this.onChange = this.onChange.bind(this);
@@ -40,7 +41,7 @@ class PostsSingleComponent extends Component {
     }
 
     if (date !== this.props.date) {
-      state.date = date;
+      state.date = ensureDate(date, new Date());
     }
 
     if (Object.keys(state).length) {
@@ -81,10 +82,10 @@ class PostsSingleComponent extends Component {
 
   showDatePicker() {
     this.props.datePicker.showDatePicker({
-      date: this.props.date || new Date(),
+      date: this.state.date,
       mode: 'date',
       onDateChange: (date) => {
-        this.setState({ date });
+        this.setState({ date: ensureDate(date) });
       },
     });
   }

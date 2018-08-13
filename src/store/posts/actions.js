@@ -1,6 +1,7 @@
 // @flow
 
 import makeActionCreator from '@cajacko/lib/dist/utils/makeActionCreator';
+import { ensureDate } from '@cajacko/lib/dist/utils/dates';
 import generateID from '../../utils/generateID';
 
 export const SAVE_POST_ACTION = 'SAVE_POST';
@@ -12,7 +13,7 @@ export const savePost = (id, content, date) => ({
     isNewPost: !id,
     id: id || generateID(),
     content,
-    date,
+    date: ensureDate(date).getTime(),
   },
 });
 

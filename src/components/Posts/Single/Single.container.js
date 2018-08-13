@@ -20,7 +20,7 @@ export const mapStateToProps = (
   )(state);
 
 const mapDispatchToProps = dispatch => ({
-  save: (id, content) => dispatch(savePost(id, content)),
+  save: (id, content, date) => dispatch(savePost(id, content, date)),
   delete: id => dispatch(deletePost(id)),
 });
 
