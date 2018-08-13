@@ -87,10 +87,18 @@ class PostsSingleComponent extends Component {
   }
 
   showDatePicker() {
+    const initialDate = new Date(this.state.date);
+
     this.props.datePicker.showDatePicker({
       date: this.state.date,
       mode: 'date',
       onDateChange: (date) => {
+        this.setState({ date: ensureDate(date) });
+      },
+      onDateCancel: () => {
+        this.setState({ date: ensureDate(initialDate) });
+      },
+      onDateSet: (date) => {
         this.setState({ date: ensureDate(date) });
       },
     });
