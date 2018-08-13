@@ -49,12 +49,18 @@ class PostsSingleComponent extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.datePicker.hideDatePicker();
+  }
+
   onChange(text) {
     this.setState({ content: text });
   }
 
   save() {
     this.props.save(this.props.id, this.state.content, this.state.date);
+
+    this.props.datePicker.hideDatePicker();
 
     if (this.isNewPost()) {
       this.props.history.push('/');
