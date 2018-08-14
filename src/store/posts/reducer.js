@@ -7,8 +7,8 @@ import { SAVE_POST_ACTION, DELETE_POST_ACTION } from './actions';
 
 const initialState = fromJS(defaultState);
 
-const getPostDateByID = (state, id) => {
-  const timestamp = state.getIn(['postsByID', id, 'date']);
+const getPostDatePropByID = (state, id, prop = 'date') => {
+  const timestamp = state.getIn(['postsByID', id, prop]);
 
   return new Date(timestamp);
 };
@@ -45,10 +45,19 @@ export default createReducer(initialState, {
 
     newState = newState.set(
       'list',
-      newState
-        .get('list')
-        .sort((a, b) =>
-          (getPostDateByID(newState, a) < getPostDateByID(newState, b) ? 1 : -1))
+      newState.get('list').sort((a, b) => {
+        const diff =
+          getPostDatePropByID(newState, a) - getPostDatePropByID(newState, b);
+
+        if (diff === 0) {
+          return (
+            getPostDatePropByID(newState, a, 'dateCreated') -
+            getPostDatePropByID(newState, b, 'dateCreated')
+          );
+        }
+
+        return diff;
+      })
     );
 
     return newState;
