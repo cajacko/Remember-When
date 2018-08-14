@@ -1,15 +1,15 @@
 // @flow
 
 import React, { Component } from 'react';
+import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import withDatePicker from '@cajacko/lib/dist/components/HOCs/withDatePicker';
-import withLogIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withLogIfDataNotFound';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
-import PostsSingle from './Single.render';
+import PostsSingle from './Common.render';
 
 /**
  * Business logic for the single posts component. Handle text change and submit
  */
-class PostsSingleComponent extends Component {
+class PostsSingleCommonComponent extends Component {
   /**
    * Initialise the class, set the initial state and bind the methods
    *
@@ -133,7 +133,4 @@ class PostsSingleComponent extends Component {
   }
 }
 
-export default withLogIfDataNotFound(
-  withDatePicker(PostsSingleComponent),
-  "PostsSingleComponent received no post info, looks like it's not in the redux store"
-);
+export default withRouter(withDatePicker(PostsSingleCommonComponent));

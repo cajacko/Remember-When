@@ -1,3 +1,3 @@
 // @flow
 
-export { default } from '../../Posts/Single';
+export { default } from '../../Posts/Single/Existing';

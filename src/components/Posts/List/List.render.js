@@ -10,6 +10,19 @@ const PostsList = ({ posts, baseRoute }) => (
     renderItem={({ item: { id } }) => (
       <PostsListItem id={id} baseRoute={baseRoute} />
     )}
+    sectionItem={date => <CardsSectionHeader title={date} />}
+    sectionAt={(a, b) => {
+      if (!a) return b.date;
+
+      if (
+        a.date.getMonth() !== b.date.getMonth() &&
+        a.date.getFullYear() !== b.date.getFullYear()
+      ) {
+        return b.date();
+      }
+
+      return null;
+    }}
   />
 );
 
