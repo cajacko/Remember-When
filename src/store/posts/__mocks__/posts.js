@@ -14,6 +14,8 @@ for (let i = 0; i < 50; i += 1) {
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....',
     date,
+    dateCreated: date,
+    dateLastModified: date,
   };
 
   list.push(id);

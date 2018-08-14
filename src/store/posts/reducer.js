@@ -14,16 +14,34 @@ const getPostDateByID = (state, id) => {
 };
 
 export default createReducer(initialState, {
-  [SAVE_POST_ACTION]: (state, {
-    id, content, date, isNewPost,
-  }) => {
+  [SAVE_POST_ACTION]: (
+    state,
+    {
+      id, content, date, isNewPost, dateLastModified, dateCreated,
+    }
+  ) => {
     let newState = state;
+    let post =
+      newState.getIn(['postsByID', id]) ||
+      Map({
+        id,
+        content,
+        date,
+        dateLastModified,
+        dateCreated,
+      });
 
     if (isNewPost) {
       newState = newState.set('list', newState.get('list').unshift(id));
+    } else {
+      post = post.merge({
+        content,
+        date,
+        dateLastModified,
+      });
     }
 
-    newState = newState.setIn(['postsByID', id], Map({ id, content, date }));
+    newState = newState.setIn(['postsByID', id], post);
 
     newState = newState.set(
       'list',
