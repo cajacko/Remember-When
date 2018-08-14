@@ -1,3 +1,3 @@
 // @flow
 
-export { default } from './ListItem.container';
+export { default } from './ListItem.component';

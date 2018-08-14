@@ -1,7 +1,6 @@
 // @flow
 
-const list = [];
-const postsByID = {};
+const posts = {};
 
 for (let i = 0; i < 50; i += 1) {
   const id = `${i}`;
@@ -9,7 +8,7 @@ for (let i = 0; i < 50; i += 1) {
   const date = new Date(2018, 6, 1);
   date.setDate(date.getDate() + i);
 
-  postsByID[id] = {
+  posts[id] = {
     id,
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....',
@@ -17,11 +16,6 @@ for (let i = 0; i < 50; i += 1) {
     dateCreated: date,
     dateLastModified: date,
   };
-
-  list.push(id);
 }
 
-export default {
-  list,
-  postsByID,
-};
+export default posts;
