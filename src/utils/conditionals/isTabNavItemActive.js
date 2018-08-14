@@ -3,10 +3,10 @@
 const isTabNavItemActive = ({ pathname }) => ({ text }) => {
   switch (text) {
     case 'Home':
-      if (pathname === '/') return true;
+      if (pathname === '/' || pathname.includes('/home')) return true;
       break;
     case 'Add':
-      if (pathname === '/post/new') return true;
+      if (pathname === '/new-post') return true;
       break;
     default:
       return false;

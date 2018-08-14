@@ -12,12 +12,16 @@ class PostsListItemComponent extends Component {
   }
 
   action() {
-    this.props.history.push(`/post/${this.props.id}`);
+    this.props.history.push(`${this.props.baseRoute}/post/${this.props.id}`);
   }
 
   render() {
     return <PostsListItem action={this.action} {...this.props} />;
   }
 }
+
+PostsListItemComponent.defaultProps = {
+  baseRoute: '',
+};
 
 export default withRouter(PostsListItemComponent);

@@ -1,3 +1,3 @@
 // @flow
 
-export { default } from '../../Posts/List';
+export { default } from './Home.render';

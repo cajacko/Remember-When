@@ -15,7 +15,12 @@ export const WITHIN_TAB = [
     component: Scenes.SceneHome,
   },
   {
-    path: '/post/:id',
+    path: '/new-post',
+    exact: true,
+    component: Scenes.ScenePost,
+  },
+  {
+    path: '/home/post/:id',
     exact: true,
     component: Scenes.ScenePost,
   },

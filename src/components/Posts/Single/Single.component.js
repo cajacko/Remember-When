@@ -79,7 +79,7 @@ class PostsSingleComponent extends Component {
       id,
     } = props || this.props;
 
-    return pathname === '/post/new' || !id;
+    return pathname === '/new-post' || !id;
   }
 
   isPostInEditMode(props) {
