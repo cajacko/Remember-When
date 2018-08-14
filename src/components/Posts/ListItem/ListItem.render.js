@@ -10,11 +10,8 @@ import CardsListItem from '@cajacko/lib/dist/components/Cards/ListItem';
  *
  * @return {ReactElement} The components markup to render
  */
-const PostsListItem = ({
-  action, date, content, noItem,
-}) =>
-  (noItem ? null : (
-    <CardsListItem withDate action={action} date={date} text={content} />
-  ));
+const PostsListItem = ({ action, date, content }) => (
+  <CardsListItem withDate action={action} date={date} text={content} />
+);
 
 export default PostsListItem;

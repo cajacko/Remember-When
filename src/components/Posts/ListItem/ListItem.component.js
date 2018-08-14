@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
+import logger from '@cajacko/lib/dist/utils/logger';
 import PostsListItem from './ListItem.render';
 
 class PostsListItemComponent extends Component {
@@ -9,6 +10,21 @@ class PostsListItemComponent extends Component {
     super(props);
 
     this.action = this.action.bind(this);
+
+    if (props.noItem) this.onNoItem();
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.noItem && !this.props.noItem) {
+      this.onNoItem();
+    }
+  }
+
+  onNoItem() {
+    logger.error(
+      "PostsListItemComponent received no post info, looks like it's not in the redux store",
+      this.props
+    );
   }
 
   action() {
@@ -16,6 +32,8 @@ class PostsListItemComponent extends Component {
   }
 
   render() {
+    if (this.props.noItem) return null;
+
     return <PostsListItem action={this.action} {...this.props} />;
   }
 }
