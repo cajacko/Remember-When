@@ -2,8 +2,8 @@
 
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import { connect } from '@cajacko/lib/dist/lib/react-redux';
-import { createSelector } from 'reselect';
 import Single from './Single.component';
+import mapSinglePost from '../../../utils/containers/mapSinglePost';
 import { savePost, deletePost } from '../../../store/posts/actions';
 
 export const mapStateToProps = (
@@ -13,11 +13,7 @@ export const mapStateToProps = (
       params: { id },
     },
   }
-) =>
-  createSelector(
-    ({ posts }) => posts.get('postsByID').get(id),
-    post => (post ? post.toJS() : {})
-  )(state);
+) => mapSinglePost(state, id);
 
 const mapDispatchToProps = dispatch => ({
   save: (id, content, date) => dispatch(savePost(id, content, date)),

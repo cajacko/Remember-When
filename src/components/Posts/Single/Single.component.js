@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import withDatePicker from '@cajacko/lib/dist/components/HOCs/withDatePicker';
+import withLogIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withLogIfDataNotFound';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
 import PostsSingle from './Single.render';
 
@@ -132,4 +133,7 @@ class PostsSingleComponent extends Component {
   }
 }
 
-export default withDatePicker(PostsSingleComponent);
+export default withLogIfDataNotFound(
+  withDatePicker(PostsSingleComponent),
+  "PostsSingleComponent received no post info, looks like it's not in the redux store"
+);

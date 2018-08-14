@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import logger from '@cajacko/lib/dist/utils/logger';
+import withLogIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withLogIfDataNotFound';
 import PostsListItem from './ListItem.render';
 
 class PostsListItemComponent extends Component {
@@ -10,21 +11,6 @@ class PostsListItemComponent extends Component {
     super(props);
 
     this.action = this.action.bind(this);
-
-    if (props.noItem) this.onNoItem();
-  }
-
-  componentWillReceiveProps(props) {
-    if (props.noItem && !this.props.noItem) {
-      this.onNoItem();
-    }
-  }
-
-  onNoItem() {
-    logger.error(
-      "PostsListItemComponent received no post info, looks like it's not in the redux store",
-      this.props
-    );
   }
 
   action() {
@@ -42,4 +28,7 @@ PostsListItemComponent.defaultProps = {
   baseRoute: '',
 };
 
-export default withRouter(PostsListItemComponent);
+export default withLogIfDataNotFound(
+  withRouter(PostsListItemComponent),
+  "PostsListItemComponent received no post info, looks like it's not in the redux store"
+);

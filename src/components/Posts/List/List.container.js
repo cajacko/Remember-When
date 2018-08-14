@@ -1,14 +1,9 @@
 // @flow
 
 import { connect } from '@cajacko/lib/dist/lib/react-redux';
-import { createSelector } from 'reselect';
+import mapIDList from '@cajacko/lib/dist/utils/containers/mapIDlist';
 import PostsList from './List.render';
 
-export const mapStateToProps = createSelector(
-  ({ posts }) => posts.get('list'),
-  posts => ({
-    posts: posts.toJS().map(id => ({ key: id, id })),
-  })
-);
+export const mapStateToProps = mapIDList('posts', ['list'], 'posts');
 
 export default connect(mapStateToProps)(PostsList);
