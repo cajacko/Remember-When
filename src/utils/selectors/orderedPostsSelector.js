@@ -6,7 +6,6 @@ import sortByDates from '@cajacko/lib/dist/utils/immutable/sortByDates';
 const orderedPostsSelector = mapToListSelector(
   'posts',
   'posts',
-  'id',
   sortByDates(['date', 'dateCreated'])
 );
 

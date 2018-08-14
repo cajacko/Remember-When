@@ -1,9 +1,9 @@
 // @flow
 
 import { connect } from '@cajacko/lib/dist/lib/react-redux';
-import orderedPostsSelector from '../../../utils/selectors/orderedPostsSelector';
+import orderedPostsWithSectionsSelector from '../../../utils/selectors/orderedPostsWithSectionsSelector';
 import PostsList from './List.render';
 
-export const mapStateToProps = orderedPostsSelector;
+export const mapStateToProps = orderedPostsWithSectionsSelector;
 
 export default connect(mapStateToProps)(PostsList);
