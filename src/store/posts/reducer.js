@@ -1,17 +1,12 @@
 // @flow
 
 import createReducer from '@cajacko/lib/dist/utils/createReducer';
+import sortIDListByDates from '@cajacko/lib/dist/utils/immutable/sortIDListByDates';
 import { fromJS, Map } from 'immutable';
 import defaultState from './__mocks__/posts';
 import { SAVE_POST_ACTION, DELETE_POST_ACTION } from './actions';
 
 const initialState = fromJS(defaultState);
-
-const getPostDatePropByID = (state, id, prop = 'date') => {
-  const timestamp = state.getIn(['postsByID', id, prop]);
-
-  return new Date(timestamp);
-};
 
 export default createReducer(initialState, {
   [SAVE_POST_ACTION]: (
@@ -43,24 +38,13 @@ export default createReducer(initialState, {
 
     newState = newState.setIn(['postsByID', id], post);
 
-    newState = newState.set(
+    return newState.set(
       'list',
-      newState.get('list').sort((a, b) => {
-        const diff =
-          getPostDatePropByID(newState, a) - getPostDatePropByID(newState, b);
-
-        if (diff === 0) {
-          return (
-            getPostDatePropByID(newState, a, 'dateCreated') -
-            getPostDatePropByID(newState, b, 'dateCreated')
-          );
-        }
-
-        return diff;
-      })
+      sortIDListByDates(newState.get('list'), newState.get('postsByID'), [
+        'date',
+        'dateCreated',
+      ])
     );
-
-    return newState;
   },
   [DELETE_POST_ACTION]: (state, { id }) =>
     state.set('list', state.get('list').filter(postId => postId !== id)),
