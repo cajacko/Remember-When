@@ -13,7 +13,6 @@ export const savePost = (id, content, date) => {
   return {
     type: SAVE_POST_ACTION,
     payload: {
-      isNewPost: !id,
       id: id || generateID(),
       content,
       date: ensureDate(date).getTime(),
