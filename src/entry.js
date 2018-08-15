@@ -1,11 +1,10 @@
 // @flow
 
-import errors from '@cajacko/lib/dist/utils/errors';
-import errorMessages from './config/errors';
+// Good idea to do this first, so everything has access to the error codes
+import './utils/setErrors';
+
 import { ENTRY } from './config/routes';
 import reducers from './store/reducers';
-
-errors.setErrors(errorMessages);
 
 export const ROUTES = ENTRY;
 
