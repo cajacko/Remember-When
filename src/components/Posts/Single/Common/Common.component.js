@@ -102,6 +102,7 @@ class PostsSingleCommonComponent extends Component {
             deletePost={this.deletePost}
             isNewPost={this.isNewPost()}
             cancelEdit={cancel}
+            dataHasChanged={dataHasChanged}
           />
         )}
       </Form>

@@ -21,6 +21,7 @@ const PostsSingle = ({
   deletePost,
   isNewPost,
   cancelEdit,
+  dataHasChanged,
 }) => (
   <HeaderWithContent
     header={{
@@ -32,6 +33,10 @@ const PostsSingle = ({
       noButton: !isInEditMode,
       leftText: isInEditMode ? 'General.Cancel' : null,
       leftAction: isInEditMode ? cancelEdit : null,
+      rightButtonStyle:
+        (dataHasChanged && isInEditMode) || !isInEditMode
+          ? buttons.TRANSPARENT.PRIMARY
+          : buttons.TRANSPARENT.BLACK,
     }}
   >
     <TextArea
