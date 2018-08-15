@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
-import withDatePicker from '@cajacko/lib/dist/components/HOCs/withDatePicker';
+import Form from '@cajacko/lib/dist/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
 import PostsSingle from './Common.render';
 
@@ -22,52 +22,26 @@ class PostsSingleCommonComponent extends Component {
     super(props);
 
     this.state = {
-      content: props.content || '',
       editing: this.isNewPost(props),
-      date: ensureDate(props.date, new Date()),
     };
 
-    this.onChange = this.onChange.bind(this);
     this.save = this.save.bind(this);
     this.edit = this.edit.bind(this);
     this.deletePost = this.deletePost.bind(this);
-    this.showDatePicker = this.showDatePicker.bind(this);
   }
 
-  componentWillReceiveProps({ content, date }) {
-    const state = {};
+  save({ content, date, hideDatePicker }) {
+    return () => {
+      this.props.save(this.props.id, content, date);
 
-    if (content !== this.props.content) {
-      state.content = content;
-    }
+      hideDatePicker();
 
-    if (date !== this.props.date) {
-      state.date = ensureDate(date, new Date());
-    }
-
-    if (Object.keys(state).length) {
-      this.setState(state);
-    }
-  }
-
-  componentWillUnmount() {
-    this.props.datePicker.hideDatePicker();
-  }
-
-  onChange(text) {
-    this.setState({ content: text });
-  }
-
-  save() {
-    this.props.save(this.props.id, this.state.content, this.state.date);
-
-    this.props.datePicker.hideDatePicker();
-
-    if (this.isNewPost()) {
-      this.props.history.push('/');
-    } else {
-      this.setState({ editing: false });
-    }
+      if (this.isNewPost()) {
+        this.props.history.push('/');
+      } else {
+        this.setState({ editing: false });
+      }
+    };
   }
 
   edit() {
@@ -87,24 +61,6 @@ class PostsSingleCommonComponent extends Component {
     return this.state.editing || this.isNewPost(props);
   }
 
-  showDatePicker() {
-    const initialDate = new Date(this.state.date);
-
-    this.props.datePicker.showDatePicker({
-      date: this.state.date,
-      mode: 'date',
-      onDateChange: (date) => {
-        this.setState({ date: ensureDate(date) });
-      },
-      onDateCancel: () => {
-        this.setState({ date: ensureDate(initialDate) });
-      },
-      onDateSet: (date) => {
-        this.setState({ date: ensureDate(date) });
-      },
-    });
-  }
-
   deletePost() {
     this.props.delete(this.props.id);
 
@@ -118,19 +74,28 @@ class PostsSingleCommonComponent extends Component {
    */
   render() {
     return (
-      <PostsSingle
-        onChange={this.onChange}
-        content={this.state.content || ''}
-        isInEditMode={this.isPostInEditMode()}
-        date={this.state.date}
-        save={this.save}
-        edit={this.edit}
-        showDatePicker={this.showDatePicker}
-        deletePost={this.deletePost}
-        isNewPost={this.isNewPost()}
-      />
+      <Form date={ensureDate(this.props.date)} content={this.props.content}>
+        {({ showDatePicker, onChange, ...formState }) => (
+          <PostsSingle
+            onChange={onChange('content')}
+            content={formState.content}
+            isInEditMode={this.isPostInEditMode()}
+            date={formState.date}
+            save={this.save(formState)}
+            edit={this.edit}
+            showDatePicker={showDatePicker('date')}
+            deletePost={this.deletePost}
+            isNewPost={this.isNewPost()}
+          />
+        )}
+      </Form>
     );
   }
 }
 
-export default withRouter(withDatePicker(PostsSingleCommonComponent));
+PostsSingleCommonComponent.defaultProps = {
+  content: '',
+  date: new Date(),
+};
+
+export default withRouter(PostsSingleCommonComponent);
