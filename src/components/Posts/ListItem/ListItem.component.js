@@ -16,7 +16,6 @@ class PostsListItemComponent extends Component {
   }
 
   render() {
-    throw new Error('Poopy');
     return <PostsListItem action={this.action} {...this.props} />;
   }
 }
