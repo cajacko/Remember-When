@@ -20,15 +20,18 @@ const PostsSingle = ({
   showDatePicker,
   deletePost,
   isNewPost,
+  cancelEdit,
 }) => (
   <HeaderWithContent
     header={{
-      back: goBack,
+      back: isInEditMode ? null : goBack,
       title: { _textFromConst: format('fullDate', date) },
       rightText: isInEditMode ? 'General.Save' : 'General.Edit',
       rightAction: isInEditMode ? save : edit,
       titleAction: showDatePicker,
       noButton: !isInEditMode,
+      leftText: isInEditMode ? 'General.Cancel' : null,
+      leftAction: isInEditMode ? cancelEdit : null,
     }}
   >
     <TextArea
