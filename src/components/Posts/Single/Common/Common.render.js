@@ -7,6 +7,7 @@ import HeaderWithContent from '@cajacko/lib/dist/components/Layout/HeaderWithCon
 import { format } from '@cajacko/lib/dist/utils/dates';
 import Button from '@cajacko/lib/dist/components/Button';
 import Align from '@cajacko/lib/dist/components/Layout/Align';
+import buttons from '@cajacko/lib/dist/config/styles/buttons';
 
 const PostsSingle = ({
   content,
@@ -42,8 +43,7 @@ const PostsSingle = ({
           <Button
             action={deletePost}
             text="Delete"
-            type="CONTAINED"
-            theme="SECONDARY"
+            type={buttons.CONTAINED.SECONDARY}
           />
         </Align>
       )}
