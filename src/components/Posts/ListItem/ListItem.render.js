@@ -11,7 +11,12 @@ import CardsListItem from '@cajacko/lib/dist/components/Cards/ListItem';
  * @return {ReactElement} The components markup to render
  */
 const PostsListItem = ({ action, date, content }) => (
-  <CardsListItem withDate action={action} date={date} text={content} />
+  <CardsListItem
+    withDate
+    action={action}
+    date={date}
+    text={{ _textFromConst: content }}
+  />
 );
 
 export default PostsListItem;

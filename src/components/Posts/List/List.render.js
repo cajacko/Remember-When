@@ -10,12 +10,12 @@ const PostsList = ({ posts, baseRoute }) => (
   <CardsList
     cards={posts.toJS()}
     keyExtractor={({ id }) => id}
-    renderItem={({ item }) => (
-      <PostsListItem {...item} baseRoute={baseRoute} />
-      )}
+    renderItem={({ item }) => <PostsListItem {...item} baseRoute={baseRoute} />}
     renderSectionHeader={({ section: { date } }) => (
-      <CardsSectionHeader title={format('monthYear', date)} />
-      )}
+      <CardsSectionHeader
+        title={{ _textFromConst: format('monthYear', date) }}
+      />
+    )}
   />
 );
 

@@ -24,8 +24,8 @@ const PostsSingle = ({
   <HeaderWithContent
     header={{
       back: goBack,
-      title: format('fullDate', date),
-      rightText: isInEditMode ? 'Save' : 'Edit',
+      title: { _textFromConst: format('fullDate', date) },
+      rightText: isInEditMode ? 'General.Save' : 'General.Edit',
       rightAction: isInEditMode ? save : edit,
       titleAction: showDatePicker,
       noButton: !isInEditMode,
@@ -42,7 +42,7 @@ const PostsSingle = ({
         <Align centerHorizontally>
           <Button
             action={deletePost}
-            text="Delete"
+            text="General.Delete"
             type={buttons.CONTAINED.SECONDARY}
           />
         </Align>
