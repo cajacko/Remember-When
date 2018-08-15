@@ -26,9 +26,8 @@ class PostsSingleCommonComponent extends Component {
     };
 
     this.save = this.save.bind(this);
-    this.edit = this.edit.bind(this);
+    this.toggleEditMode = this.toggleEditMode.bind(this);
     this.deletePost = this.deletePost.bind(this);
-    this.cancelEdit = this.cancelEdit.bind(this);
   }
 
   save({ content, date, hideDatePicker }) {
@@ -45,12 +44,10 @@ class PostsSingleCommonComponent extends Component {
     };
   }
 
-  edit() {
-    this.setState({ editing: true });
-  }
-
-  cancelEdit() {
-    this.setState({ editing: false });
+  toggleEditMode(editing) {
+    return () => {
+      this.setState({ editing });
+    };
   }
 
   isNewPost(props) {
@@ -82,7 +79,7 @@ class PostsSingleCommonComponent extends Component {
       <Form
         date={ensureDate(this.props.date)}
         content={this.props.content}
-        onCancel={this.cancelEdit}
+        onCancel={this.toggleEditMode(false)}
       >
         {({
  showDatePicker, onChange, cancel, ...formState
@@ -93,7 +90,7 @@ class PostsSingleCommonComponent extends Component {
     isInEditMode={this.isPostInEditMode()}
     date={formState.date}
     save={this.save(formState)}
-    edit={this.edit}
+    edit={this.toggleEditMode(true)}
     showDatePicker={showDatePicker('date')}
     deletePost={this.deletePost}
     isNewPost={this.isNewPost()}
