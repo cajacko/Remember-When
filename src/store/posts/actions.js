@@ -2,7 +2,7 @@
 
 import makeActionCreator from '@cajacko/lib/dist/utils/makeActionCreator';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
-import generateID from '../../utils/generateID';
+import uuid from '@cajacko/lib/dist/utils/uuid';
 
 export const SAVE_POST_ACTION = 'SAVE_POST';
 export const DELETE_POST_ACTION = 'DELETE_POST';
@@ -13,7 +13,7 @@ export const savePost = makeActionCreator(
     const now = new Date().getTime();
 
     return {
-      id: id || generateID(),
+      id: id || uuid(),
       content,
       date: ensureDate(date).getTime(),
       dateCreated: id ? null : now,
