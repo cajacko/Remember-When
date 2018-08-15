@@ -1,6 +1,7 @@
 // @flow
 
-// Good idea to do this first, so everything has access to the error codes
+// Good idea to do these first, so everything has access to the error codes
+import './utils/setMarketingCopy';
 import './utils/setErrors';
 
 import { ENTRY } from './config/routes';
