@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import isEqual from 'lodash/isEqual';
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import Form from '@cajacko/lib/dist/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
@@ -30,9 +31,11 @@ class PostsSingleCommonComponent extends Component {
     this.deletePost = this.deletePost.bind(this);
   }
 
-  save({ content, date, hideDatePicker }) {
+  save({ content, date, hideDatePicker }, dataHasChanged) {
     return () => {
-      this.props.save(this.props.id, content, date);
+      if (dataHasChanged) {
+        this.props.save(this.props.id, content, date);
+      }
 
       hideDatePicker();
 
@@ -82,20 +85,24 @@ class PostsSingleCommonComponent extends Component {
         onCancel={this.toggleEditMode(false)}
       >
         {({
- showDatePicker, onChange, cancel, ...formState
-}) => (
-  <PostsSingle
-    onChange={onChange('content')}
-    content={formState.content}
-    isInEditMode={this.isPostInEditMode()}
-    date={formState.date}
-    save={this.save(formState)}
-    edit={this.toggleEditMode(true)}
-    showDatePicker={showDatePicker('date')}
-    deletePost={this.deletePost}
-    isNewPost={this.isNewPost()}
-    cancelEdit={cancel}
-  />
+          showDatePicker,
+          onChange,
+          cancel,
+          dataHasChanged,
+          ...formState
+        }) => (
+          <PostsSingle
+            onChange={onChange('content')}
+            content={formState.content}
+            isInEditMode={this.isPostInEditMode()}
+            date={formState.date}
+            save={this.save(formState, dataHasChanged)}
+            edit={this.toggleEditMode(true)}
+            showDatePicker={showDatePicker('date')}
+            deletePost={this.deletePost}
+            isNewPost={this.isNewPost()}
+            cancelEdit={cancel}
+          />
         )}
       </Form>
     );
