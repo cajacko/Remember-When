@@ -3,7 +3,7 @@
 import { withRouter } from '@cajacko/lib/dist/lib/react-router';
 import { connect } from '@cajacko/lib/dist/lib/react-redux';
 import withErrorBoundaryIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withErrorBoundaryIfDataNotFound';
-import errors from '@cajacko/lib/dist/config/errors';
+import errors from '@cajacko/lib/dist/utils/errors';
 import postByIDSelector from '../../../../utils/selectors/postByIDSelector';
 import PostsSingleCommon from '../Common';
 
@@ -18,7 +18,7 @@ export const mapStateToProps = (
 
 const PostsSingleCommonWithDataCheck = withErrorBoundaryIfDataNotFound(
   PostsSingleCommon,
-  errors[4],
+  errors.getError('200-001'),
   'Posts/Single/Existing/Existing.container did not receive any data'
 );
 
