@@ -22,6 +22,8 @@ const PostsSingle = ({
   isNewPost,
   cancelEdit,
   dataHasChanged,
+  onTextAreaFocus,
+  setTextAreaRef,
 }) => (
   <HeaderWithContent
     header={{
@@ -30,7 +32,6 @@ const PostsSingle = ({
       rightText: isInEditMode ? 'General.Save' : 'General.Edit',
       rightAction: isInEditMode ? save : edit,
       titleAction: showDatePicker,
-      noButton: !isInEditMode,
       leftText: isInEditMode ? 'General.Cancel' : null,
       leftAction: isInEditMode ? cancelEdit : null,
       rightButtonStyle:
@@ -41,9 +42,9 @@ const PostsSingle = ({
   >
     <TextArea
       value={content}
-      editable={isInEditMode}
       onChange={onChange}
-      autoFocus={isInEditMode}
+      onFocus={onTextAreaFocus}
+      innerRef={setTextAreaRef}
     />
     {isInEditMode &&
       !isNewPost && (

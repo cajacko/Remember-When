@@ -1,7 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import isEqual from 'lodash/isEqual';
 import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
 import Form from '@cajacko/lib/dist/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
@@ -29,6 +28,8 @@ class PostsSingleCommonComponent extends Component {
     this.save = this.save.bind(this);
     this.toggleEditMode = this.toggleEditMode.bind(this);
     this.deletePost = this.deletePost.bind(this);
+    this.onTextAreaFocus = this.onTextAreaFocus.bind(this);
+    this.setTextAreaRef = this.setTextAreaRef.bind(this);
   }
 
   save({ content, date, hideDatePicker }, dataHasChanged) {
@@ -52,6 +53,7 @@ class PostsSingleCommonComponent extends Component {
       if (!editing && this.isNewPost()) {
         this.props.history.goBack();
       } else {
+        if (this.state.editing === editing) return;
         this.setState({ editing });
       }
     };
@@ -74,6 +76,30 @@ class PostsSingleCommonComponent extends Component {
     this.props.delete(this.props.id);
 
     this.props.history.push('/');
+  }
+
+  showDatePicker(showDatePicker) {
+    return () => {
+      if (this.textArea) this.textArea.blur();
+      this.toggleEditMode(true)();
+      showDatePicker('date')();
+    };
+  }
+
+  onTextAreaFocus() {
+    if (!this.state.editing) {
+      this.toggleEditMode(true)();
+    }
+  }
+
+  setTextAreaRef(ref) {
+    this.textArea = ref;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.editing && !this.state.editing) {
+      if (this.textArea) this.textArea.blur();
+    }
   }
 
   /**
@@ -102,11 +128,13 @@ class PostsSingleCommonComponent extends Component {
             date={formState.date}
             save={this.save(formState, dataHasChanged)}
             edit={this.toggleEditMode(true)}
-            showDatePicker={showDatePicker('date')}
+            showDatePicker={this.showDatePicker(showDatePicker)}
             deletePost={this.deletePost}
             isNewPost={this.isNewPost()}
             cancelEdit={cancel}
             dataHasChanged={dataHasChanged}
+            onTextAreaFocus={this.onTextAreaFocus}
+            setTextAreaRef={this.setTextAreaRef}
           />
         )}
       </Form>
