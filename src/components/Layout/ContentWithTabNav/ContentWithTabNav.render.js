@@ -2,7 +2,7 @@
 
 import React from 'react';
 import CJContentWithTabNav from '@cajacko/lib/dist/components/Layout/ContentWithTabNav';
-import { withRouter } from '@cajacko/lib/dist/lib/react-router';
+import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
 import mapTabNavItemsWithPush from '@cajacko/lib/dist/utils/mapTabNavItemsWithPush';
 import tabNavItems from '../../../config/tabNavItems';
 import matchActiveTabNav from '../../../config/matchActiveTabNav';

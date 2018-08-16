@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { withRouter } from '@cajacko/lib/dist/lib/react-router';
+import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
 import PostsListItem from './ListItem.render';
 
 class PostsListItemComponent extends Component {

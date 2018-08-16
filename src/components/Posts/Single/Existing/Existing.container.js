@@ -1,6 +1,6 @@
 // @flow
 
-import { withRouter } from '@cajacko/lib/dist/lib/react-router';
+import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
 import { connect } from '@cajacko/lib/dist/lib/react-redux';
 import withErrorBoundaryIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withErrorBoundaryIfDataNotFound';
 import errors from '@cajacko/lib/dist/utils/errors';

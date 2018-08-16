@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import isEqual from 'lodash/isEqual';
-import { withRouter } from '@cajacko/lib/dist/lib/react-router';
+import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
 import Form from '@cajacko/lib/dist/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
 import PostsSingle from './Common.render';
@@ -49,7 +49,11 @@ class PostsSingleCommonComponent extends Component {
 
   toggleEditMode(editing) {
     return () => {
-      this.setState({ editing });
+      if (!editing && this.isNewPost()) {
+        this.props.history.goBack();
+      } else {
+        this.setState({ editing });
+      }
     };
   }
 
