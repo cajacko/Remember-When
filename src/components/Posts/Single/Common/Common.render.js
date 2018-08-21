@@ -41,6 +41,7 @@ const PostsSingle = ({
     }}
   >
     <TextArea
+      autoFocus={isNewPost}
       value={content}
       onChange={onChange}
       onFocus={onTextAreaFocus}
