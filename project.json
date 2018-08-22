@@ -9,6 +9,7 @@
   "templates": {
     "main-app": {
       "entryFile": "src/entry.js",
+      "splashIcon": "src/assets/splash-icon.png",
       "type": "mobile-app"
     }
   }
