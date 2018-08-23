@@ -1,7 +1,5 @@
 // @flow
 
-import Api from '../modules/Api';
+import graphqlClient from '../graphql/client';
 
-const api = new Api();
-
-export default api;
+export default graphqlClient;
