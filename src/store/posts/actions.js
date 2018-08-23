@@ -2,24 +2,33 @@
 
 import makeActionCreator from '@cajacko/lib/dist/utils/makeActionCreator';
 import { ensureDate } from '@cajacko/lib/dist/utils/dates';
+import store from '@cajacko/lib/dist/utils/store';
 import uuid from '@cajacko/lib/dist/utils/uuid';
+import api from '../../utils/api';
 
 export const SAVE_POST_ACTION = 'SAVE_POST';
 export const DELETE_POST_ACTION = 'DELETE_POST';
+export const MARK_POST_AS_ONLINE = 'MARK_POST_AS_ONLINE';
+
+export const deletePost = makeActionCreator(DELETE_POST_ACTION, 'id');
+
+export const markPostAsOnline = makeActionCreator(MARK_POST_AS_ONLINE, 'id');
 
 export const savePost = makeActionCreator(
   SAVE_POST_ACTION,
   (id, content, date) => {
     const now = new Date().getTime();
 
-    return {
+    const post = {
       id: id || uuid(),
       content,
       date: ensureDate(date).getTime(),
       dateCreated: id ? null : now,
       dateLastModified: now,
     };
+
+    api.savePost(post).then(() => store().dispatch(markPostAsOnline(post.id)));
+
+    return post;
   }
 );
-
-export const deletePost = makeActionCreator(DELETE_POST_ACTION, 'id');
