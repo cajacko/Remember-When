@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "description": "App for recording and sharing the best moments in your life",
   "scripts": {
-    "start": "lib start",
-    "test": "lib test",
-    "build": "lib build",
-    "deploy": "lib deploy",
-    "postinstall": "lib postinstall",
-    "precommit": "lib precommit"
+    "start": "template start",
+    "test": "template test",
+    "deploy": "template deploy",
+    "link": "template link",
+    "unlink": "template unlink",
+    "upgrade": "template upgrade",
+    "postinstall": "template postinstall",
+    "precommit": "template precommit"
   },
   "license": "MIT",
   "devDependencies": {
-    "@cajacko/lib": "2.6.0",
+    "@cajacko/template": "^0.5.0",
     "babel-eslint": "8.2.2",
     "eslint": "4.18.1",
     "eslint-config-airbnb": "16.1.0",
