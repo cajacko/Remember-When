@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@cajacko/template": "0.5.7"
+    "@cajacko/template": "https://github.com/cajacko/template.git#v0.5.9"
   },
   "devDependencies": {
     "babel-eslint": "8.2.2",
