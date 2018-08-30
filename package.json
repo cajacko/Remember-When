@@ -12,9 +12,6 @@
     "precommit": "template precommit"
   },
   "license": "MIT",
-  "dependencies": {
-    "@cajacko/template": "https://github.com/cajacko/template.git#v0.5.14"
-  },
   "devDependencies": {
     "babel-eslint": "8.2.2",
     "eslint": "4.18.1",
@@ -29,5 +26,8 @@
     "eslint-plugin-react": "7.7.0",
     "husky": "0.14.3",
     "jsdoc": "3.5.5"
+  },
+  "dependencies": {
+    "@cajacko/template": "https://github.com/cajacko/template.git#v0.5.14"
   }
 }
