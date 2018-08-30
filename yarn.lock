@@ -93,20 +93,6 @@
     semver "^5.5.1"
     simple-git "^1.96.0"
 
-"@cajacko/template@https://github.com/cajacko/template.git#v0.5.11":
-  version "0.5.11"
-  resolved "https://github.com/cajacko/template.git#2728c571a639ac3519fc30d6056b739373aea0c3"
-  dependencies:
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.1.15"
-    commander "^2.16.0"
-    ejs "^2.6.1"
-    fs-extra "^6.0.1"
-    inquirer "^6.0.0"
-    is-git-repository "^1.1.1"
-    lodash "^4.17.10"
-    react-dev-utils "^5.0.1"
-    watch "^1.0.2"
-
 "@cajacko/template@https://github.com/cajacko/template.git#v0.5.13":
   version "0.5.13"
   resolved "https://github.com/cajacko/template.git#44e8c44c14d279ad880abd86a825f6b6c3046d5d"
