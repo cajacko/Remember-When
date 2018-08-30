@@ -4,6 +4,7 @@
   "description": "App for recording and sharing the best moments in your life",
   "scripts": {
     "start": "template start",
+    "init": "template init",
     "test": "template test",
     "deploy": "template deploy",
     "upgrade": "template upgrade",
