@@ -111,20 +111,6 @@
     validator "^10.3.0"
     watch "^1.0.2"
 
-"@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.2":
-  version "0.2.2"
-  resolved "https://github.com/cajacko/template-utils.git#865556a0bfed8cb60f04eb461940d62e5460318e"
-  dependencies:
-    commander "^2.17.1"
-    ejs "^2.6.1"
-    fs-extra "^7.0.0"
-    inquirer "^6.2.0"
-    is-git-repository "^1.1.1"
-    lodash "^4.17.10"
-    react-dev-utils "^5.0.2"
-    semver "^5.5.1"
-    simple-git "^1.96.0"
-
 "@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.3":
   version "0.2.3"
   resolved "https://github.com/cajacko/template-utils.git#183d269a3d65f3a1d1a7243ce2c0cce2a996cc28"
@@ -153,11 +139,11 @@
     react-dev-utils "^5.0.1"
     watch "^1.0.2"
 
-"@cajacko/template@https://github.com/cajacko/template.git#v0.6.2":
-  version "0.6.2"
-  resolved "https://github.com/cajacko/template.git#5b07130190be4c34ffd811929025894cc852b8fd"
+"@cajacko/template@https://github.com/cajacko/template.git#v0.6.3":
+  version "0.6.3"
+  resolved "https://github.com/cajacko/template.git#c5a6d36eb001ad0e66b74d15189945fc81110387"
   dependencies:
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.2"
+    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.3"
     commander "^2.16.0"
     ejs "^2.6.1"
     fs-extra "^6.0.1"
@@ -168,9 +154,9 @@
     react-dev-utils "^5.0.1"
     watch "^1.0.2"
 
-"@cajacko/template@https://github.com/cajacko/template.git#v0.6.3":
-  version "0.6.3"
-  resolved "https://github.com/cajacko/template.git#c5a6d36eb001ad0e66b74d15189945fc81110387"
+"@cajacko/template@https://github.com/cajacko/template.git#v0.6.4":
+  version "0.6.4"
+  resolved "https://github.com/cajacko/template.git#223942e8ab172e5d55cbe86fda2f98401d2a2401"
   dependencies:
     "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.3"
     commander "^2.16.0"
@@ -1172,9 +1158,9 @@ chardet@^0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
 
-chardet@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.5.0.tgz#fe3ac73c00c3d865ffcc02a0682e2c20b6a06029"
+chardet@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
 
 chokidar@^1.6.1:
   version "1.7.0"
@@ -1768,18 +1754,18 @@ extend@^3.0.0:
 
 external-editor@^2.0.4:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-2.2.0.tgz#045511cfd8d133f3846673d1047c154e214ad3d5"
+  resolved "http://registry.npmjs.org/external-editor/-/external-editor-2.2.0.tgz#045511cfd8d133f3846673d1047c154e214ad3d5"
   dependencies:
     chardet "^0.4.0"
     iconv-lite "^0.4.17"
     tmp "^0.0.33"
 
 external-editor@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-3.0.1.tgz#fc9638c4d7cde4f0bb82b12307a1a23912c492e3"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/external-editor/-/external-editor-3.0.3.tgz#5866db29a97826dbe4bf3afd24070ead9ea43a27"
   dependencies:
-    chardet "^0.5.0"
-    iconv-lite "^0.4.22"
+    chardet "^0.7.0"
+    iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
 extglob@^0.3.1:
@@ -2347,7 +2333,7 @@ husky@0.14.3:
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
 
-iconv-lite@^0.4.17, iconv-lite@^0.4.22, iconv-lite@^0.4.4:
+iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   dependencies:
@@ -3075,11 +3061,11 @@ minimatch@~0.2.11:
 
 minimist@0.0.8:
   version "0.0.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@^1.1.0, minimist@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+  resolved "http://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
 minipass@^2.2.1, minipass@^2.3.3:
   version "2.3.4"
@@ -3823,8 +3809,8 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
 rxjs@^6.1.0:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.2.2.tgz#eb75fa3c186ff5289907d06483a77884586e1cf9"
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.0.tgz#e55b05ad4bdf351db4b45756638dfa368260a8a3"
   dependencies:
     tslib "^1.9.0"
 
