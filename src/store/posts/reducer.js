@@ -1,7 +1,7 @@
 // @flow
 
-import createReducer from '@cajacko/lib/dist/utils/createReducer';
-import setNewOrUpdateMap from '@cajacko/lib/dist/utils/immutable/setNewOrUpdateMap';
+import createReducer from '@cajacko/lib/utils/createReducer';
+import setNewOrUpdateMap from '@cajacko/lib/utils/immutable/setNewOrUpdateMap';
 import { fromJS } from 'immutable';
 import defaultState from './__mocks__/posts';
 import {

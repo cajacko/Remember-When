@@ -1,6 +1,6 @@
 // @flow
 
-import itemByIDFromMapSelector from '@cajacko/lib/dist/utils/selectors/itemByIDFromMapSelector';
+import itemByIDFromMapSelector from '@cajacko/lib/utils/selectors/itemByIDFromMapSelector';
 
 const postByIDSelector = itemByIDFromMapSelector('posts');
 

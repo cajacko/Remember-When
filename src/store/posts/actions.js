@@ -1,9 +1,9 @@
 // @flow
 
-import makeActionCreator from '@cajacko/lib/dist/utils/makeActionCreator';
-import { ensureDate } from '@cajacko/lib/dist/utils/dates';
-import store from '@cajacko/lib/dist/utils/store';
-import uuid from '@cajacko/lib/dist/utils/uuid';
+import makeActionCreator from '@cajacko/lib/utils/makeActionCreator';
+import { ensureDate } from '@cajacko/lib/utils/dates';
+import store from '@cajacko/lib/utils/store';
+import uuid from '@cajacko/lib/utils/uuid';
 import api from '../../utils/api';
 
 export const SAVE_POST_ACTION = 'SAVE_POST';

@@ -1,9 +1,9 @@
 // @flow
 
 import React from 'react';
-import CardsList from '@cajacko/lib/dist/components/Cards/List';
-import CardsSectionHeader from '@cajacko/lib/dist/components/Cards/SectionHeader';
-import { format } from '@cajacko/lib/dist/utils/dates';
+import CardsList from '@cajacko/lib/components/Cards/List';
+import CardsSectionHeader from '@cajacko/lib/components/Cards/SectionHeader';
+import { format } from '@cajacko/lib/utils/dates';
 import PostsListItem from '../ListItem';
 
 const PostsList = ({ posts, baseRoute }) => (

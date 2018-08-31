@@ -1,9 +1,9 @@
 // @flow
 
 import React, { Component } from 'react';
-import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
-import Form from '@cajacko/lib/dist/components/Forms/Form';
-import { ensureDate } from '@cajacko/lib/dist/utils/dates';
+import withRouter from '@cajacko/lib/components/HOCs/withRouter';
+import Form from '@cajacko/lib/components/Forms/Form';
+import { ensureDate } from '@cajacko/lib/utils/dates';
 import PostsSingle from './Common.render';
 
 /**

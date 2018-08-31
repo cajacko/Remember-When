@@ -1,7 +1,7 @@
 // @flow
 
-import { HOME, PLUS } from '@cajacko/lib/dist/config/icons';
-import marketingCopy from '@cajacko/lib/dist/utils/marketingCopy';
+import { HOME, PLUS } from '@cajacko/lib/config/icons';
+import marketingCopy from '@cajacko/lib/utils/marketingCopy';
 
 export default [
   {

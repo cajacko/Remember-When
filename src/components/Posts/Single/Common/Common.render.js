@@ -1,13 +1,13 @@
 // @flow
 
 import React from 'react';
-import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
-import TextArea from '@cajacko/lib/dist/components/Forms/TextArea';
-import HeaderWithContent from '@cajacko/lib/dist/components/Layout/HeaderWithContent';
-import { format } from '@cajacko/lib/dist/utils/dates';
-import Button from '@cajacko/lib/dist/components/Button';
-import Align from '@cajacko/lib/dist/components/Layout/Align';
-import buttons from '@cajacko/lib/dist/config/styles/buttons';
+import withRouter from '@cajacko/lib/components/HOCs/withRouter';
+import TextArea from '@cajacko/lib/components/Forms/TextArea';
+import HeaderWithContent from '@cajacko/lib/components/Layout/HeaderWithContent';
+import { format } from '@cajacko/lib/utils/dates';
+import Button from '@cajacko/lib/components/Button';
+import Align from '@cajacko/lib/components/Layout/Align';
+import buttons from '@cajacko/lib/config/styles/buttons';
 
 const PostsSingle = ({
   content,

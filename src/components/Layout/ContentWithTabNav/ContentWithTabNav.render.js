@@ -1,9 +1,9 @@
 // @flow
 
 import React from 'react';
-import CJContentWithTabNav from '@cajacko/lib/dist/components/Layout/ContentWithTabNav';
-import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
-import mapTabNavItemsWithPush from '@cajacko/lib/dist/utils/mapTabNavItemsWithPush';
+import CJContentWithTabNav from '@cajacko/lib/components/Layout/ContentWithTabNav';
+import withRouter from '@cajacko/lib/components/HOCs/withRouter';
+import mapTabNavItemsWithPush from '@cajacko/lib/utils/mapTabNavItemsWithPush';
 import tabNavItems from '../../../config/tabNavItems';
 import matchActiveTabNav from '../../../config/matchActiveTabNav';
 

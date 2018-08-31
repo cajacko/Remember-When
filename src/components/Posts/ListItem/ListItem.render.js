@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import CardsListItem from '@cajacko/lib/dist/components/Cards/ListItem';
+import CardsListItem from '@cajacko/lib/components/Cards/ListItem';
 
 /**
  * Render the markup for the posts list item

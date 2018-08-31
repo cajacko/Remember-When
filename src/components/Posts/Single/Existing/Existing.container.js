@@ -1,9 +1,9 @@
 // @flow
 
-import withRouter from '@cajacko/lib/dist/components/HOCs/withRouter';
-import { connect } from '@cajacko/lib/dist/lib/react-redux';
-import withErrorBoundaryIfDataNotFound from '@cajacko/lib/dist/components/HOCs/withErrorBoundaryIfDataNotFound';
-import errors from '@cajacko/lib/dist/utils/errors';
+import withRouter from '@cajacko/lib/components/HOCs/withRouter';
+import { connect } from '@cajacko/lib/lib/react-redux';
+import withErrorBoundaryIfDataNotFound from '@cajacko/lib/components/HOCs/withErrorBoundaryIfDataNotFound';
+import errors from '@cajacko/lib/utils/errors';
 import postByIDSelector from '../../../../utils/selectors/postByIDSelector';
 import PostsSingleCommon from '../Common';
 

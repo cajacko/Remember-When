@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Router from '@cajacko/lib/dist/components/Router';
+import Router from '@cajacko/lib/components/Router';
 import { WITHIN_TAB } from '../../../config/routes';
 import ContentWithTabNav from '../../Layout/ContentWithTabNav';
 

@@ -1,6 +1,6 @@
 // @flow
 
-import { connect } from '@cajacko/lib/dist/lib/react-redux';
+import { connect } from '@cajacko/lib/lib/react-redux';
 import PostsSingleCommon from './Common.component';
 import { savePost, deletePost } from '../../../../store/posts/actions';
 
