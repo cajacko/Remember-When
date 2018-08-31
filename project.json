@@ -11,10 +11,6 @@
       "entryFile": "src/appEntry.js",
       "splashIcon": "src/assets/splash-icon.png",
       "type": "mobile-app"
-    },
-    "db": {
-      "type": "graphql",
-      "entryFile": "src/graphqlEntry.js"
     }
   }
 }

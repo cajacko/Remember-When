@@ -80,19 +80,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.1.16":
-  version "0.1.16"
-  resolved "https://github.com/cajacko/template-utils.git#a8d29e5e1a90d1afbca32055f166e1968fb095b9"
-  dependencies:
-    commander "^2.17.1"
-    fs-extra "^7.0.0"
-    inquirer "^6.2.0"
-    is-git-repository "^1.1.1"
-    lodash "^4.17.10"
-    react-dev-utils "^5.0.2"
-    semver "^5.5.1"
-    simple-git "^1.96.0"
-
 "@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.0":
   version "0.2.0"
   resolved "https://github.com/cajacko/template-utils.git#b2be98ccd1e933a84efb1a54107d04cba9a60be8"
@@ -107,11 +94,25 @@
     semver "^5.5.1"
     simple-git "^1.96.0"
 
-"@cajacko/template@https://github.com/cajacko/template.git#v0.5.14":
-  version "0.5.14"
-  resolved "https://github.com/cajacko/template.git#9b2500659407b0384950c42748c409e09af67034"
+"@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.1":
+  version "0.2.1"
+  resolved "https://github.com/cajacko/template-utils.git#13d7bcb0145d1c7399fb78bcbfc4626ba0cdb520"
   dependencies:
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.1.16"
+    commander "^2.17.1"
+    ejs "^2.6.1"
+    fs-extra "^7.0.0"
+    inquirer "^6.2.0"
+    is-git-repository "^1.1.1"
+    lodash "^4.17.10"
+    react-dev-utils "^5.0.2"
+    semver "^5.5.1"
+    simple-git "^1.96.0"
+
+"@cajacko/template@https://github.com/cajacko/template.git#v0.6.0":
+  version "0.6.0"
+  resolved "https://github.com/cajacko/template.git#978b6ee60b32a0694250dfd3bdb150a885952486"
+  dependencies:
+    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.0"
     commander "^2.16.0"
     ejs "^2.6.1"
     fs-extra "^6.0.1"
@@ -122,11 +123,11 @@
     react-dev-utils "^5.0.1"
     watch "^1.0.2"
 
-"@cajacko/template@https://github.com/cajacko/template.git#v0.6.0":
-  version "0.6.0"
-  resolved "https://github.com/cajacko/template.git#978b6ee60b32a0694250dfd3bdb150a885952486"
+"@cajacko/template@https://github.com/cajacko/template.git#v0.6.1":
+  version "0.6.1"
+  resolved "https://github.com/cajacko/template.git#ebf96c374db73c4c8a8f47b95541761af6b139dd"
   dependencies:
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.0"
+    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.1"
     commander "^2.16.0"
     ejs "^2.6.1"
     fs-extra "^6.0.1"
