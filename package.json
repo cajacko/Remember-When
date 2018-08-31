@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "@cajacko/lib": "https://github.com/cajacko/lib.git#v2.6.0",
-    "@cajacko/template": "https://github.com/cajacko/template.git#v0.6.2"
+    "@cajacko/template": "https://github.com/cajacko/template.git#v0.6.3"
   }
 }

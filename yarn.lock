@@ -125,6 +125,21 @@
     semver "^5.5.1"
     simple-git "^1.96.0"
 
+"@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.3":
+  version "0.2.3"
+  resolved "https://github.com/cajacko/template-utils.git#183d269a3d65f3a1d1a7243ce2c0cce2a996cc28"
+  dependencies:
+    commander "^2.17.1"
+    ejs "^2.6.1"
+    fs-extra "^7.0.0"
+    inquirer "^6.2.0"
+    is-git-repository "^1.1.1"
+    lodash "^4.17.10"
+    react-dev-utils "^5.0.2"
+    semver "^5.5.1"
+    simple-git "^1.96.0"
+    watch "^1.0.2"
+
 "@cajacko/template@0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.5.0.tgz#bbffeb1db9bbaa3b7c7178d787dba701fb3d0ad1"
@@ -143,6 +158,21 @@
   resolved "https://github.com/cajacko/template.git#5b07130190be4c34ffd811929025894cc852b8fd"
   dependencies:
     "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.2"
+    commander "^2.16.0"
+    ejs "^2.6.1"
+    fs-extra "^6.0.1"
+    inquirer "^6.0.0"
+    is-git-repository "^1.1.1"
+    is-symlink "^1.0.0"
+    lodash "^4.17.10"
+    react-dev-utils "^5.0.1"
+    watch "^1.0.2"
+
+"@cajacko/template@https://github.com/cajacko/template.git#v0.6.3":
+  version "0.6.3"
+  resolved "https://github.com/cajacko/template.git#c5a6d36eb001ad0e66b74d15189945fc81110387"
+  dependencies:
+    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.3"
     commander "^2.16.0"
     ejs "^2.6.1"
     fs-extra "^6.0.1"
