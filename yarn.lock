@@ -191,6 +191,41 @@
     reselect "^3.0.1"
     styled-components "^3.3.3"
 
+"@cajacko/lib@https://github.com/cajacko/lib.git#v3.0.3":
+  version "3.0.3"
+  resolved "https://github.com/cajacko/lib.git#88daff2e9a4fd42529fc2e3eac22255b085b28e9"
+  dependencies:
+    babel-cli "^6.26.0"
+    babel-eslint "^8.2.3"
+    babel-plugin-styled-components "^1.5.1"
+    babel-plugin-transform-object-rest-spread "^6.26.0"
+    babel-plugin-transform-react-jsx-source "^6.22.0"
+    babel-preset-env "^1.6.1"
+    babel-preset-flow "^6.23.0"
+    babel-preset-react "^6.24.1"
+    color "^3.0.0"
+    eslint "^4.19.1"
+    eslint-config-airbnb "^16.1.0"
+    eslint-plugin-import "^2.12.0"
+    eslint-plugin-jsx-a11y "^6.0.3"
+    eslint-plugin-react "^7.9.1"
+    gulp "^3.9.1"
+    gulp-babel "^7.0.1"
+    immutable "^3.8.2"
+    lodash "^4.17.10"
+    moment "^2.22.2"
+    native-base "^2.7.2"
+    react "16.3.1"
+    react-redux "^5.0.7"
+    react-router-native "^4.3.0"
+    redux "^4.0.0"
+    redux-immutable "^4.0.0"
+    redux-persist "4.8.2"
+    redux-persist-transform-immutable "^5.0.0"
+    redux-thunk "^2.3.0"
+    reselect "^3.0.1"
+    styled-components "^3.3.3"
+
 "@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.2.3":
   version "0.2.3"
   resolved "https://github.com/cajacko/template-utils.git#183d269a3d65f3a1d1a7243ce2c0cce2a996cc28"
@@ -204,21 +239,6 @@
     react-dev-utils "^5.0.2"
     semver "^5.5.1"
     simple-git "^1.96.0"
-    watch "^1.0.2"
-
-"@cajacko/template@https://github.com/cajacko/template.git#v0.6.5":
-  version "0.6.5"
-  resolved "https://github.com/cajacko/template.git#40373b95a8284bea985be08ab42d66191961280e"
-  dependencies:
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.2.3"
-    commander "^2.16.0"
-    ejs "^2.6.1"
-    fs-extra "^6.0.1"
-    inquirer "^6.0.0"
-    is-git-repository "^1.1.1"
-    is-symlink "^1.0.0"
-    lodash "^4.17.10"
-    react-dev-utils "^5.0.1"
     watch "^1.0.2"
 
 "@cajacko/template@https://github.com/cajacko/template.git#v0.6.6":
