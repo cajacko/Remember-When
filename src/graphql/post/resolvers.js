@@ -10,5 +10,5 @@ export const Mutation = {
   setPost: ({ id, ...post }, db) =>
     db
       .set(['posts', id], getValidPostProps({ id, ...post }))
-      .then(() => Query.getPost(id)),
+      .then(() => Query.getPost({ id }, db)),
 };

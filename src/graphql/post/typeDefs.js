@@ -1,17 +1,22 @@
 // @flow
 
 export const types = `
-  string PostID
+  scalar PostID
+  scalar Date
 
   type Post {
     id: PostID
+    content: String
+    date: Date
+    dateCreated: Date
+    dateLastModified: Date
   }
 `;
 
 export const query = `
-  getPost: Post
+  getPost(id: PostID): Post
 `;
 
 export const mutation = `
-  setPost: PostID
+  setPost(id: PostID, content: String, date: Date, dateCreated: Date, dateLastModified: Date): Post
 `;

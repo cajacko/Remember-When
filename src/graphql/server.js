@@ -1,6 +1,6 @@
 // @flow
 
-import postResolvers from './post/resolvers';
+import * as postResolvers from './post/resolvers';
 import * as postTypeDefs from './post/typeDefs';
 
 export const resolvers = {
