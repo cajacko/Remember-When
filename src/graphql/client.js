@@ -4,7 +4,10 @@ import graphqlClient from '@cajacko/lib/utils/graphqlClient';
 import * as post from './post/client';
 
 const client = {
-  post,
+  savePost: post.set,
 };
 
-export default graphqlClient(client);
+export default graphqlClient(
+  client,
+  'http://localhost:5000/remember-when-6b84a/us-central1/graphql/graphql'
+);
