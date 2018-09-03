@@ -5,6 +5,7 @@ import * as post from './post/client';
 
 const client = {
   savePost: post.set,
+  deletePost: post.remove,
 };
 
 export default graphqlClient(

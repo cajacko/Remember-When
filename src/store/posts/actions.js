@@ -10,7 +10,11 @@ export const SAVE_POST_ACTION = 'SAVE_POST';
 export const DELETE_POST_ACTION = 'DELETE_POST';
 export const MARK_POST_AS_ONLINE = 'MARK_POST_AS_ONLINE';
 
-export const deletePost = makeActionCreator(DELETE_POST_ACTION, 'id');
+export const deletePost = makeActionCreator(DELETE_POST_ACTION, (id) => {
+  api.deletePost(id);
+
+  return { id };
+});
 
 export const markPostAsOnline = makeActionCreator(MARK_POST_AS_ONLINE, 'id');
 
@@ -23,8 +27,8 @@ export const savePost = makeActionCreator(
       id: id || uuid(),
       content,
       date: ensureDate(date).getTime(),
-      dateCreated: id ? null : now,
       dateLastModified: now,
+      dateCreated: id ? undefined : now,
     };
 
     api.savePost(post).then(() => store().dispatch(markPostAsOnline(post.id)));

@@ -15,8 +15,10 @@ export const types = `
 
 export const query = `
   getPost(id: PostID): Post
+  posts: [Post]
 `;
 
 export const mutation = `
   setPost(id: PostID, content: String, date: Date, dateCreated: Date, dateLastModified: Date): Post
+  deletePost(id: PostID): PostID
 `;
