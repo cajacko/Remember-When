@@ -1,0 +1,20 @@
+{
+  "title": "Remember When",
+  "slug": "remember-when",
+  "description": "App for recording and sharing the best moments in your life",
+  "authorName": "Charlie Jackson",
+  "authorUrl": "https://charliejackson.com",
+  "authorEmail": "contact@charliejackson.com",
+  "license": "MIT",
+  "templates": {
+    "main-app": {
+      "entryFile": "src/appEntry.js",
+      "splashIcon": "src/assets/splash-icon.png",
+      "type": "mobile-app"
+    },
+    "api": {
+      "type": "graphql",
+      "entryFile": "src/graphqlEntry.js"
+    }
+  }
+}

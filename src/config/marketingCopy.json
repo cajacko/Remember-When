@@ -1,0 +1,20 @@
+{
+  "General": {
+    "Edit": "Edit",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Delete": "Delete",
+    "Set": "Set",
+    "Done": "Done"
+  },
+  "TabNav": {
+    "Home": "Home",
+    "Add": "Add"
+  },
+  "Errors": {
+    "DataNotFound": {
+      "Title": "Damn! We've messed up.",
+      "Message": "We're looking for data in the wrong place. Don't worry, we've notified our rescue team that something went wrong"
+    }
+  }
+}
