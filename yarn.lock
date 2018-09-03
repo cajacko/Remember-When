@@ -106,6 +106,13 @@
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.0.0.tgz#697655183394facffb063437ddf52c0277698775"
 
+"@babel/polyfill@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/@babel/polyfill/-/polyfill-7.0.0.tgz#c8ff65c9ec3be6a1ba10113ebd40e8750fb90bff"
+  dependencies:
+    core-js "^2.5.7"
+    regenerator-runtime "^0.11.1"
+
 "@babel/runtime-corejs2@^7.0.0-rc.1":
   version "7.0.0"
   resolved "https://registry.npmjs.org/@babel/runtime-corejs2/-/runtime-corejs2-7.0.0.tgz#786711ee099c2c2af7875638866c1259eff30a8c"
@@ -175,41 +182,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/lib@https://github.com/cajacko/lib.git#v3.0.3":
-  version "3.0.3"
-  resolved "https://github.com/cajacko/lib.git#88daff2e9a4fd42529fc2e3eac22255b085b28e9"
-  dependencies:
-    babel-cli "^6.26.0"
-    babel-eslint "^8.2.3"
-    babel-plugin-styled-components "^1.5.1"
-    babel-plugin-transform-object-rest-spread "^6.26.0"
-    babel-plugin-transform-react-jsx-source "^6.22.0"
-    babel-preset-env "^1.6.1"
-    babel-preset-flow "^6.23.0"
-    babel-preset-react "^6.24.1"
-    color "^3.0.0"
-    eslint "^4.19.1"
-    eslint-config-airbnb "^16.1.0"
-    eslint-plugin-import "^2.12.0"
-    eslint-plugin-jsx-a11y "^6.0.3"
-    eslint-plugin-react "^7.9.1"
-    gulp "^3.9.1"
-    gulp-babel "^7.0.1"
-    immutable "^3.8.2"
-    lodash "^4.17.10"
-    moment "^2.22.2"
-    native-base "^2.7.2"
-    react "16.3.1"
-    react-redux "^5.0.7"
-    react-router-native "^4.3.0"
-    redux "^4.0.0"
-    redux-immutable "^4.0.0"
-    redux-persist "4.8.2"
-    redux-persist-transform-immutable "^5.0.0"
-    redux-thunk "^2.3.0"
-    reselect "^3.0.1"
-    styled-components "^3.3.3"
-
 "@cajacko/lib@https://github.com/cajacko/lib.git#v3.1.0":
   version "3.1.0"
   resolved "https://github.com/cajacko/lib.git#2495c6b9390ff04d324d842433cde41e5693f635"
@@ -266,6 +238,21 @@
     simple-git "^1.96.0"
     watch "^1.0.2"
 
+"@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.3.0":
+  version "0.3.0"
+  resolved "https://github.com/cajacko/template-utils.git#78f319432de15a3c72204a7186f85a8e4f487e50"
+  dependencies:
+    commander "^2.17.1"
+    ejs "^2.6.1"
+    fs-extra "^7.0.0"
+    inquirer "^6.2.0"
+    is-git-repository "^1.1.1"
+    lodash "^4.17.10"
+    react-dev-utils "^5.0.2"
+    semver "^5.5.1"
+    simple-git "^1.96.0"
+    watch "^1.0.2"
+
 "@cajacko/template@https://github.com/cajacko/template.git#v0.6.6":
   version "0.6.6"
   resolved "https://github.com/cajacko/template.git#42e87e998e6cb1782623dd20c8030bd62b85d62c"
@@ -279,6 +266,32 @@
     is-symlink "^1.0.0"
     lodash "^4.17.10"
     react-dev-utils "^5.0.1"
+    watch "^1.0.2"
+
+"@cajacko/template@https://github.com/cajacko/template.git#v0.7.0":
+  version "0.7.0"
+  resolved "https://github.com/cajacko/template.git#7e9615dacec2021075e0af2c3ed653314c2af505"
+  dependencies:
+    "@babel/polyfill" "^7.0.0"
+    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.3.0"
+    babel-cli "^6.26.0"
+    babel-eslint "^8.2.3"
+    babel-plugin-styled-components "^1.6.0"
+    babel-plugin-transform-object-rest-spread "^6.26.0"
+    babel-plugin-transform-react-jsx-source "^6.22.0"
+    babel-preset-env "^1.6.1"
+    babel-preset-flow "^6.23.0"
+    babel-preset-react "^6.24.1"
+    babel-register "^6.26.0"
+    commander "^2.16.0"
+    ejs "^2.6.1"
+    fs-extra "^6.0.1"
+    inquirer "^6.0.0"
+    is-git-repository "^1.1.1"
+    is-symlink "^1.0.0"
+    lodash "^4.17.10"
+    react-dev-utils "^5.0.1"
+    styled-components "^3.4.5"
     watch "^1.0.2"
 
 "@firebase/app-types@0.3.2":
@@ -5692,7 +5705,7 @@ regenerator-runtime@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
-regenerator-runtime@^0.11.0:
+regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
@@ -6291,7 +6304,7 @@ stubs@^3.0.0:
   version "3.0.0"
   resolved "https://registry.node-modules.io/tarballs/stubs/3.0.0.tgz#e8d2ba1fa9c90570303c030b6900f7d5f89abe5b"
 
-styled-components@^3.3.3:
+styled-components@^3.3.3, styled-components@^3.4.5:
   version "3.4.5"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.5.tgz#6cbfde7c9189c868b9fd01fee40f5330dbd0cc8d"
   dependencies:
