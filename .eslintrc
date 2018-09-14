@@ -28,7 +28,15 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "valid-jsdoc": "error",
+    "valid-jsdoc": [
+      "error",
+      {
+        "matchDescription": ".+",
+        "requireParamDescription": true,
+        "requireReturnDescription": true,
+        "requireParamType": true
+      }
+    ],
     "require-jsdoc": [
       "warn",
       {
