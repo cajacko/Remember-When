@@ -33,8 +33,7 @@
       {
         "matchDescription": ".+",
         "requireParamDescription": true,
-        "requireReturnDescription": true,
-        "requireParamType": true
+        "requireReturnDescription": true
       }
     ],
     "require-jsdoc": [
@@ -85,6 +84,7 @@
     ],
     "class-methods-use-this": "off"
   },
+  "parser": "babel-eslint",
   "plugins": [
     "jest",
     "flowtype"
@@ -96,6 +96,7 @@
     "fetch": false,
     "document": false,
     "window": false,
-    "Image": false
+    "Image": false,
+    "logger": false
   }
 }
