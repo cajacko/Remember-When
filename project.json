@@ -18,5 +18,6 @@
       "type": "graphql",
       "entryFile": "src/graphqlEntry.js"
     }
-  }
+  },
+  "templateInitVersion": "0.9.0"
 }

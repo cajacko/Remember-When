@@ -6,17 +6,18 @@
     "start": "template start",
     "init": "template init",
     "test": "template test",
+    "build": "template build",
     "deploy": "template deploy",
     "upgrade": "template upgrade",
     "postinstall": "template postinstall",
-    "precommit": "template precommit"
+    "precommit": "template precommit",
+    "prepare": "template prepare"
   },
   "license": "MIT",
   "engines": {
     "node": ">=6.14.0 <7.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-eslint": "8.2.2",
     "babel-plugin-styled-components": "1.6.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
