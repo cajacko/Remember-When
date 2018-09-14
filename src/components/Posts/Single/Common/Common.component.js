@@ -5,11 +5,20 @@ import withRouter from '@cajacko/lib/components/HOCs/withRouter';
 import Form from '@cajacko/lib/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/utils/dates';
 import PostsSingle from './Common.render';
+import { ReactRouter } from '../../../../types/General';
+
+type Props = {
+  id: string,
+  save: () => {},
+  ...ReactRouter,
+};
+
+type State = {};
 
 /**
  * Business logic for the single posts component. Handle text change and submit
  */
-class PostsSingleCommonComponent extends Component {
+class PostsSingleCommonComponent extends Component<Props, State> {
   /**
    * Initialise the class, set the initial state and bind the methods
    *
@@ -32,6 +41,52 @@ class PostsSingleCommonComponent extends Component {
     this.setTextAreaRef = this.setTextAreaRef.bind(this);
   }
 
+  /**
+   * When the component updates blur the textarea if we're not editing anymore
+   *
+   * @param {Object} prevProps The previous component props
+   * @param {Object} prevState The previous component state
+   *
+   * @return {Void} No return value
+   */
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.editing && !this.state.editing) {
+      if (this.textArea) this.textArea.blur();
+    }
+  }
+
+  /**
+   * When the text area goes into focus, turn on edit mode
+   *
+   * @return {Void} No return value
+   */
+  onTextAreaFocus() {
+    if (!this.state.editing) {
+      this.toggleEditMode(true)();
+    }
+  }
+
+  /**
+   * Store the textArea ref
+   *
+   * @param {Object} ref The text area ref
+   *
+   * @return {Void} No return value
+   */
+  setTextAreaRef(ref) {
+    this.textArea = ref;
+  }
+
+  /**
+   * Save the post if the data has changed. Will also hide the datepicker. And
+   * redirect if this ws a new post
+   *
+   * @param {Object} formState The state from the form
+   * @param {Boolean} dataHasChanged Whether the data is different than whats
+   * saved
+   *
+   * @return {Function} The function that actually calls save
+   */
   save({ content, date, hideDatePicker }, dataHasChanged) {
     return () => {
       if (dataHasChanged) {
@@ -48,6 +103,13 @@ class PostsSingleCommonComponent extends Component {
     };
   }
 
+  /**
+   * Toggle editing mode
+   *
+   * @param {Boolean} editing Whether we are editing or not
+   *
+   * @return {Function} the func that actually makes the call
+   */
   toggleEditMode(editing) {
     return () => {
       if (!editing && this.isNewPost()) {
@@ -59,6 +121,13 @@ class PostsSingleCommonComponent extends Component {
     };
   }
 
+  /**
+   * Is the post a new one or not. Based off the route and id
+   *
+   * @param {Object} props The props to check against
+   *
+   * @return {Boolean} Whether or not the post is new
+   */
   isNewPost(props) {
     const {
       location: { pathname },
@@ -68,38 +137,41 @@ class PostsSingleCommonComponent extends Component {
     return pathname === '/new-post' || !id;
   }
 
+  /**
+   * figure out if the post is in edit mode. A new post is always in edit mode
+   *
+   * @param {Object} props The props to check against
+   *
+   * @return {Boolean} Whether the post is in edit mode
+   */
   isPostInEditMode(props) {
     return this.state.editing || this.isNewPost(props);
   }
 
+  /**
+   * Delete the post and redirect
+   *
+   * @return {Void} No return value
+   */
   deletePost() {
     this.props.delete(this.props.id);
 
     this.props.history.push('/');
   }
 
+  /**
+   * Show the datepicker and blur the text area
+   *
+   * @param {Function} showDatePicker The show date picker func
+   *
+   * @return {Function} The func that actually makes the call
+   */
   showDatePicker(showDatePicker) {
     return () => {
       if (this.textArea) this.textArea.blur();
       this.toggleEditMode(true)();
       showDatePicker('date')();
     };
-  }
-
-  onTextAreaFocus() {
-    if (!this.state.editing) {
-      this.toggleEditMode(true)();
-    }
-  }
-
-  setTextAreaRef(ref) {
-    this.textArea = ref;
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.editing && !this.state.editing) {
-      if (this.textArea) this.textArea.blur();
-    }
   }
 
   /**

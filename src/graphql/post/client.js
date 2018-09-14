@@ -2,6 +2,13 @@
 
 import { getValidPostProps } from './utils';
 
+/**
+ * Set the post object to the db
+ *
+ * @param {Object} post The post object
+ *
+ * @return {Object} The graphql config needed for the mutation
+ */
 export const set = post => ({
   mutation: `
     mutation SetPost($id: PostID, $content: String, $date: Date, $dateCreated: Date, $dateLastModified: Date) {
@@ -17,9 +24,16 @@ export const set = post => ({
   vars: getValidPostProps(post),
 });
 
+/**
+ * Remove a post from the db
+ *
+ * @param {String} id the id of the post to remove
+ *
+ * @return {Object} The graphql config needed for the mutation
+ */
 export const remove = id => ({
   mutation: `
-    mutation DeletPost($id: PostID) {
+    mutation DeletePost($id: PostID) {
       deletePost(id: $id)
     }
   `,

@@ -6,7 +6,17 @@ import CardsSectionHeader from '@cajacko/lib/components/Cards/SectionHeader';
 import { format } from '@cajacko/lib/utils/dates';
 import PostsListItem from '../ListItem';
 
-const PostsList = ({ posts, baseRoute }) => (
+type Props = {
+  posts: [],
+  baseRoute: string,
+};
+
+/**
+ * Render a list of posts
+ *
+ * @return {ReactElement} The markup to render
+ */
+const PostsList = ({ posts, baseRoute }: Props) => (
   <CardsList
     cards={posts.toJS()}
     keyExtractor={({ id }) => id}

@@ -8,7 +8,32 @@ import { format } from '@cajacko/lib/utils/dates';
 import Button from '@cajacko/lib/components/Button';
 import Align from '@cajacko/lib/components/Layout/Align';
 import buttons from '@cajacko/lib/config/styles/buttons';
+import { ReactRouter } from '../../../../types/General';
 
+type Props = {
+  content: string,
+  date: Date,
+  isInEditMode: boolean,
+  onChange: () => {},
+  save: () => {},
+  edit: () => {},
+  showDatePicker: () => {},
+  deletePost: () => {},
+  isNewPost: boolean,
+  cancelEdit: () => {},
+  dataHasChanged: boolean,
+  onTextAreaFocus: () => {},
+  setTextAreaRef: () => {},
+  ...ReactRouter,
+};
+
+/**
+ * Render a single post, and how it looks when editing
+ *
+ * @param {Object} props The props passed to the component
+ *
+ * @return {ReactElement} The markup to render
+ */
 const PostsSingle = ({
   content,
   date,
@@ -24,7 +49,7 @@ const PostsSingle = ({
   dataHasChanged,
   onTextAreaFocus,
   setTextAreaRef,
-}) => (
+}: Props) => (
   <HeaderWithContent
     header={{
       back: isInEditMode ? null : goBack,
