@@ -19,5 +19,5 @@
       "entryFile": "src/graphqlEntry.js"
     }
   },
-  "templateInitVersion": "0.13.0"
+  "templateInitVersion": "0.15.0"
 }
