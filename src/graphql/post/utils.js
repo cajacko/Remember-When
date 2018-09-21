@@ -1,5 +1,7 @@
 // @flow
 
+import type { DBPost } from '../../types/Post';
+
 /**
  * Given an object return only the props the db expects
  *
@@ -13,7 +15,7 @@ export const getValidPostProps = ({
   date,
   dateCreated,
   dateLastModified,
-}) => ({
+}: DBPost) => ({
   id,
   content,
   date,

@@ -1,6 +1,7 @@
 // @flow
 
 import { getValidPostProps } from './utils';
+import type { DBPost, PostID } from '../../types/Post';
 
 /**
  * Set the post object to the db
@@ -9,7 +10,7 @@ import { getValidPostProps } from './utils';
  *
  * @return {Object} The graphql config needed for the mutation
  */
-export const set = post => ({
+export const set = (post: DBPost) => ({
   mutation: `
     mutation SetPost($id: PostID, $content: String, $date: Date, $dateCreated: Date, $dateLastModified: Date) {
       setPost(id: $id, content: $content, date: $date, dateCreated: $dateCreated, dateLastModified: $dateLastModified) {
@@ -31,7 +32,7 @@ export const set = post => ({
  *
  * @return {Object} The graphql config needed for the mutation
  */
-export const remove = id => ({
+export const remove = (id: PostID) => ({
   mutation: `
     mutation DeletePost($id: PostID) {
       deletePost(id: $id)

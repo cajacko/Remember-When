@@ -9,7 +9,7 @@ import {
   DELETE_POST_ACTION,
   MARK_POST_AS_ONLINE,
 } from './actions';
-import PostRecord from '../../types/PostRecord';
+import { PostRecord } from '../../types/Post';
 
 const initialState = fromJS(defaultState);
 

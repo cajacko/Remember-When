@@ -1,14 +1,17 @@
 // @flow
 
 import { getValidPostProps } from './utils';
+import type { DB } from '../../types/General';
+import type { DBPost, PostID } from '../../types/Post';
 
 export const Query = {
-  getPost: ({ id }, db) => db.get(['posts', id]),
-  posts: (vars, db) => db.get(['posts']).then(vals => Object.values(vals)),
+  getPost: ({ id }: { id: PostID }, db: DB) => db.get(['posts', id]),
+  posts: (vars: any, db: DB) =>
+    db.get(['posts']).then(vals => Object.values(vals)),
 };
 
 export const Mutation = {
-  setPost: ({ id, ...post }, db) =>
+  setPost: ({ id, ...post }: DBPost, db: DB) =>
     Query.getPost({ id }, db)
       .catch(() => undefined)
       .then((existingItem) => {
@@ -27,5 +30,6 @@ export const Mutation = {
           .set(['posts', id], getValidPostProps(item))
           .then(() => Query.getPost({ id }, db));
       }),
-  deletePost: ({ id }, db) => db.delete(['posts', id]).then(() => id),
+  deletePost: ({ id }: { id: PostID }, db: DB) =>
+    db.delete(['posts', id]).then(() => id),
 };

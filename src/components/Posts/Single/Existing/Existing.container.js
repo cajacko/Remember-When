@@ -7,6 +7,8 @@ import withErrorBoundaryIfDataNotFound from '@cajacko/lib/components/HOCs/withEr
 import errors from '@cajacko/lib/utils/errors';
 import postByIDSelector from '../../../../utils/selectors/postByIDSelector';
 import PostsSingleCommon from '../Common';
+import type { ReduxState } from '../../../../store/types';
+import type { ReactRouter } from '../../../../types/General';
 
 /**
  * Grab the post from the redux store, based off the route id
@@ -17,12 +19,12 @@ import PostsSingleCommon from '../Common';
  * @return {Object} The new props to spread on the component
  */
 export const mapStateToProps = (
-  state,
+  state: ReduxState,
   {
     match: {
       params: { id },
     },
-  }
+  }: ReactRouter
 ) => postByIDSelector(state, id);
 
 export default compose(

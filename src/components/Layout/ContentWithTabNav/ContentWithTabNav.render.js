@@ -6,11 +6,10 @@ import withRouter from '@cajacko/lib/components/HOCs/withRouter';
 import mapTabNavItemsWithPush from '@cajacko/lib/utils/mapTabNavItemsWithPush';
 import tabNavItems from '../../../config/tabNavItems';
 import matchActiveTabNav from '../../../config/matchActiveTabNav';
-import { ReactRouter } from '../../../types/General';
+import type { ReactRouter } from '../../../types/General';
 
-type Props = {
+type Props = ReactRouter & {
   children: React.Node,
-  ...ReactRouter,
 };
 
 /**

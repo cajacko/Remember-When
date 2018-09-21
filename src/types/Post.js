@@ -3,6 +3,23 @@
 import { Record } from 'immutable';
 // import type { RecordFactory, RecordOf } from 'immutable';
 
+export type PostID = string;
+export type PostContent = string;
+
+export type Post = {
+  id: PostID,
+  content: PostContent,
+  date: Date,
+  dateCreated: Date,
+  dateLastModified: Date,
+};
+
+export type DBPost = Post & {};
+
+export type ImmutablePosts = {
+  toJS: () => Array<Post>,
+};
+
 // type PostPropsType = {
 //   id: ?string,
 //   content: string,
@@ -12,7 +29,7 @@ import { Record } from 'immutable';
 // };
 
 // const Post: RecordFactory<PostPropsType> = Record({
-const Post = Record({
+export const PostRecord = Record({
   id: null,
   content: '',
   date: null,
@@ -21,5 +38,3 @@ const Post = Record({
 });
 
 // export type PostType = RecordOf<PostPropsType>;
-
-export default Post;

@@ -5,20 +5,31 @@ import withRouter from '@cajacko/lib/components/HOCs/withRouter';
 import Form from '@cajacko/lib/components/Forms/Form';
 import { ensureDate } from '@cajacko/lib/utils/dates';
 import PostsSingle from './Common.render';
-import { ReactRouter } from '../../../../types/General';
+import type { ReactRouter } from '../../../../types/General';
+import type { PostID, PostContent } from '../../../../types/Post';
 
-type Props = {
-  id: string,
-  save: () => {},
-  ...ReactRouter,
+type Props = ReactRouter & {
+  id: PostID,
+  save: (PostID, PostContent, Date) => void,
+  delete: PostID => void,
+  date: Date,
+  content: PostContent,
 };
 
-type State = {};
+type State = {
+  editing: boolean,
+};
+
+type TextAreaRef = {
+  blur: () => void,
+};
 
 /**
  * Business logic for the single posts component. Handle text change and submit
  */
 class PostsSingleCommonComponent extends Component<Props, State> {
+  static defaultProps: {};
+
   /**
    * Initialise the class, set the initial state and bind the methods
    *
@@ -34,11 +45,11 @@ class PostsSingleCommonComponent extends Component<Props, State> {
       editing: this.isNewPost(props),
     };
 
-    this.save = this.save.bind(this);
-    this.toggleEditMode = this.toggleEditMode.bind(this);
-    this.deletePost = this.deletePost.bind(this);
-    this.onTextAreaFocus = this.onTextAreaFocus.bind(this);
-    this.setTextAreaRef = this.setTextAreaRef.bind(this);
+    (this: any).save = this.save.bind(this);
+    (this: any).toggleEditMode = this.toggleEditMode.bind(this);
+    (this: any).deletePost = this.deletePost.bind(this);
+    (this: any).onTextAreaFocus = this.onTextAreaFocus.bind(this);
+    (this: any).setTextAreaRef = this.setTextAreaRef.bind(this);
   }
 
   /**
@@ -49,7 +60,7 @@ class PostsSingleCommonComponent extends Component<Props, State> {
    *
    * @return {Void} No return value
    */
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevState.editing && !this.state.editing) {
       if (this.textArea) this.textArea.blur();
     }
@@ -73,9 +84,11 @@ class PostsSingleCommonComponent extends Component<Props, State> {
    *
    * @return {Void} No return value
    */
-  setTextAreaRef(ref) {
+  setTextAreaRef(ref: TextAreaRef) {
     this.textArea = ref;
   }
+
+  textArea: ?TextAreaRef;
 
   /**
    * Save the post if the data has changed. Will also hide the datepicker. And

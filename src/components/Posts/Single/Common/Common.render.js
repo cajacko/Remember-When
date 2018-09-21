@@ -8,10 +8,11 @@ import { format } from '@cajacko/lib/utils/dates';
 import Button from '@cajacko/lib/components/Button';
 import Align from '@cajacko/lib/components/Layout/Align';
 import buttons from '@cajacko/lib/config/styles/buttons';
-import { ReactRouter } from '../../../../types/General';
+import type { ReactRouter } from '../../../../types/General';
+import type { PostContent } from '../../../../types/Post';
 
-type Props = {
-  content: string,
+type Props = ReactRouter & {
+  content: PostContent,
   date: Date,
   isInEditMode: boolean,
   onChange: () => {},
@@ -24,7 +25,6 @@ type Props = {
   dataHasChanged: boolean,
   onTextAreaFocus: () => {},
   setTextAreaRef: () => {},
-  ...ReactRouter,
 };
 
 /**

@@ -5,9 +5,10 @@ import CardsList from '@cajacko/lib/components/Cards/List';
 import CardsSectionHeader from '@cajacko/lib/components/Cards/SectionHeader';
 import { format } from '@cajacko/lib/utils/dates';
 import PostsListItem from '../ListItem';
+import type { ImmutablePosts } from '../../../types/Post';
 
 type Props = {
-  posts: [],
+  posts: ImmutablePosts,
   baseRoute: string,
 };
 

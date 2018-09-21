@@ -3,11 +3,14 @@
 import React, { Component } from 'react';
 import withRouter from '@cajacko/lib/components/HOCs/withRouter';
 import PostsListItem from './ListItem.render';
-import { ReactRouter } from '../../../types/General';
+import type { ReactRouter } from '../../../types/General';
+import type { PostID, PostContent } from '../../../types/Post';
 
-type Props = {
+type Props = ReactRouter & {
+  id: PostID,
   baseRoute: string,
-  ...ReactRouter,
+  content: PostContent,
+  date: Date,
 };
 
 /**
@@ -16,6 +19,8 @@ type Props = {
  * ATM just handles the routing
  */
 class PostsListItemComponent extends Component<Props> {
+  static defaultProps: {};
+
   /**
    * Initialise the class, bind the actions
    *
@@ -26,7 +31,7 @@ class PostsListItemComponent extends Component<Props> {
   constructor(props) {
     super(props);
 
-    this.action = this.action.bind(this);
+    (this: any).action = this.action.bind(this);
   }
 
   /**
