@@ -91,7 +91,8 @@
     {
       "files": [
         "**/__mocks__/**/*",
-        "**/__tests__/**/*"
+        "**/__tests__/**/*",
+        "**/*.test.js"
       ],
       "rules": {
         "require-jsdoc": "off",

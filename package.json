@@ -16,12 +16,12 @@
   },
   "license": "MIT",
   "jest": {
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js"
+      "<rootDir>/src/**/__tests__/**/*.js",
+      "<rootDir>/features/**/*.test.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules",
