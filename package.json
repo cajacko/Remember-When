@@ -31,9 +31,6 @@
       "<rootDir>/tmp"
     ]
   },
-  "engines": {
-    "node": ">=6.14.0 <7.0.0"
-  },
   "peerDependencies": {
     "apollo-server-express": "^2.0.4",
     "babel-cli": "^6.26.0",
