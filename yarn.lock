@@ -194,9 +194,9 @@
     simple-git "^1.96.0"
     watch "^1.0.2"
 
-"@cajacko/template@git+https://github.com/cajacko/template.git#v0.13.0":
+"@cajacko/template@https://github.com/cajacko/template.git#v0.13.0":
   version "0.13.0"
-  resolved "git+https://github.com/cajacko/template.git#869fe7e08dd54fa310d9e490192cb72aa4969472"
+  resolved "https://github.com/cajacko/template.git#869fe7e08dd54fa310d9e490192cb72aa4969472"
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.8.0"
