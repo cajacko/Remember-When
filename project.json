@@ -11,7 +11,7 @@
     "main-app": {
       "entryFile": "src/appEntry.js",
       "name": "rememberwhen",
-      "displayName": "Remember When",
+      "displayName": "Remember",
       "splashIcon": "src/assets/splash-icon.png",
       "icon": "src/assets/icon.png",
       "type": "mobile-app"
