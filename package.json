@@ -85,6 +85,6 @@
   "dependencies": {
     "@cajacko/commit": "0.2.0",
     "@cajacko/lib": "https://github.com/cajacko/lib.git#v3.4.0",
-    "@cajacko/template": "https://github.com/cajacko/template.git#v0.15.0"
+    "@cajacko/template": "https://github.com/cajacko/template.git#v0.16.0"
   }
 }
