@@ -163,6 +163,49 @@
     reselect "^3.0.1"
     styled-components "^3.3.3"
 
+"@cajacko/lib@https://github.com/cajacko/lib.git#v3.5.0":
+  version "3.5.0"
+  resolved "https://github.com/cajacko/lib.git#b9becd3a8d480de7f9951fcbd97955e00b0ef5a6"
+  dependencies:
+    "@cajacko/commit" "0.2.0"
+    apollo-server-express "^2.0.4"
+    babel-cli "^6.26.0"
+    babel-eslint "8.2.2"
+    babel-plugin-styled-components "1.6.0"
+    babel-plugin-transform-object-rest-spread "6.26.0"
+    babel-plugin-transform-react-jsx-source "6.22.0"
+    babel-preset-env "1.6.1"
+    babel-preset-flow "6.23.0"
+    babel-preset-react "6.24.1"
+    color "^3.0.0"
+    eslint "4.18.1"
+    eslint-config-airbnb "16.1.0"
+    eslint-plugin-import "2.9.0"
+    eslint-plugin-jsx-a11y "6.0.3"
+    eslint-plugin-react "7.7.0"
+    express "^4.16.3"
+    firebase-admin "~6.0.0"
+    firebase-functions "^2.0.3"
+    graphql "^0.13.2"
+    graphql-request "^1.8.2"
+    gulp "^3.9.1"
+    gulp-babel "^7.0.1"
+    immutable "^3.8.2"
+    lodash "^4.17.10"
+    moment "^2.22.2"
+    native-base "^2.7.2"
+    react "16.3.1"
+    react-native-splash-screen "^3.1.1"
+    react-redux "^5.0.7"
+    react-router-native "^4.3.0"
+    redux "^4.0.0"
+    redux-immutable "^4.0.0"
+    redux-persist "4.8.2"
+    redux-persist-transform-immutable "^5.0.0"
+    redux-thunk "^2.3.0"
+    reselect "^3.0.1"
+    styled-components "^3.3.3"
+
 "@cajacko/template-utils@https://github.com/cajacko/template-utils.git#v0.10.0":
   version "0.10.0"
   resolved "https://github.com/cajacko/template-utils.git#333dbc77e1f90d93e040f9a3b35b82303807c7ca"
@@ -215,31 +258,6 @@
     is-symlink "^1.0.0"
     lodash "^4.17.10"
     react-dev-utils "^5.0.1"
-    watch "^1.0.2"
-
-"@cajacko/template@https://github.com/cajacko/template.git#v0.16.0":
-  version "0.16.0"
-  resolved "https://github.com/cajacko/template.git#af5bb641d08293bcb6382f2581f337f822124b34"
-  dependencies:
-    "@babel/polyfill" "^7.0.0"
-    "@cajacko/commit" "0.2.0"
-    "@cajacko/template-utils" "https://github.com/cajacko/template-utils.git#v0.10.0"
-    babel-cli "^6.26.0"
-    babel-eslint "8.2.2"
-    babel-plugin-transform-object-rest-spread "^6.26.0"
-    babel-preset-env "^1.6.1"
-    babel-preset-flow "^6.23.0"
-    babel-register "^6.26.0"
-    commander "^2.16.0"
-    ejs "^2.6.1"
-    fs-extra "^6.0.1"
-    globby "^8.0.1"
-    inquirer "^6.0.0"
-    is-git-repository "^1.1.1"
-    is-symlink "^1.0.0"
-    lodash "^4.17.10"
-    react-dev-utils "^5.0.1"
-    replace "^1.0.0"
     watch "^1.0.2"
 
 "@cajacko/template@https://github.com/cajacko/template.git#v0.17.0":
@@ -6565,6 +6583,10 @@ react-native-keyboard-aware-scroll-view@0.5.0:
   dependencies:
     prop-types "^15.6.0"
     react-native-iphone-x-helper "^1.0.1"
+
+react-native-splash-screen@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.node-modules.io/tarballs/react-native-splash-screen/3.1.1.tgz#1a4e46c9fdce53ff52af2a2cb4181788c4e30b30"
 
 react-native-vector-icons@4.6.0:
   version "4.6.0"
