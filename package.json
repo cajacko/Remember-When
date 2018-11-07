@@ -11,8 +11,7 @@
     "upgrade": "template upgrade",
     "postinstall": "template postinstall",
     "precommit": "template precommit",
-    "commitmsg": "commit --validate-commit -u",
-    "prepare": "template prepare"
+    "commitmsg": "commit --validate-commit -u"
   },
   "license": "MIT",
   "jest": {
@@ -83,8 +82,8 @@
     "jsdoc": "3.5.5"
   },
   "dependencies": {
-    "@cajacko/commit": "0.2.0",
-    "@cajacko/lib": "https://github.com/cajacko/lib.git#v3.6.0",
-    "@cajacko/template": "https://github.com/cajacko/template.git#v0.19.0"
+    "@cajacko/commit": "0.6.0",
+    "@cajacko/lib": "3.8.0",
+    "@cajacko/template": "0.25.6"
   }
 }
