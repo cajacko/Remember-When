@@ -1,4 +1,8 @@
+set -e
+
 ./build.sh
+
+set +e
 
 docker stop rw
 docker rm rw
@@ -27,5 +31,6 @@ eval $command
 docker cp . rw:/App
 docker start rw
 docker logs --follow rw
+docker inspect rw --format='{{.State.ExitCode}}'
 docker stop rw
 docker rm rw
