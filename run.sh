@@ -31,6 +31,8 @@ eval $command
 docker cp . rw:/App
 docker start rw
 docker logs --follow rw
-docker inspect rw --format='{{.State.ExitCode}}'
+code=$(docker inspect rw --format='{{.State.ExitCode}}')
 docker stop rw
 docker rm rw
+
+exit $code
