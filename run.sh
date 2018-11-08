@@ -1,4 +1,4 @@
-# ./build.sh
+./build.sh
 
 docker stop rw
 docker rm rw
