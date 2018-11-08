@@ -232,10 +232,10 @@
     replace "^1.0.0"
     watch "^1.0.2"
 
-"@cajacko/template@0.25.6":
-  version "0.25.6"
-  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.25.6.tgz#264ac7c1ff7c18e2f2c1597b477385a36ce4b419"
-  integrity sha512-tO40te/GQpBjua+/wzMYObbsDdt5/Z63U1Yiei5r2eMbKgddS//o96caJ5tXeptXtSymVkFfvvqdxfeYk7t5EA==
+"@cajacko/template@0.25.7":
+  version "0.25.7"
+  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.25.7.tgz#9de8c2a3dbe9faa87bc846223d15bd481bbae814"
+  integrity sha512-AwmF8YkBNPxAKtKoB0eYllh9vqj4FblR4IZCaWfjcB/v21DbkrGiWND4tfgPnwCbpZeutbi4j60rjrcnI2IdgQ==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@cajacko/template-utils" "0.13.0"
