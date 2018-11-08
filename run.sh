@@ -5,7 +5,7 @@ docker rm rw
 
 set -e
 
-command="docker run"
+command="docker create"
 
 # Get all the env keys and pass in from the host
 str=$(egrep -v '^#' .env | xargs)
@@ -19,11 +19,13 @@ do
   command="${command} -e ${ary2[0]}"
 done
 
-command="${command} -d -it --name=rw remember-when yarn deploy -t main-app --deploy-env alpha-deploygate --android"
+command="${command} -it --name=rw remember-when yarn install && yarn deploy -t main-app --deploy-env alpha-deploygate --android"
 
 # Execute the docker run command with all the env set
 eval $command
 
+docker cp . rw:/App
+docker start rw
 docker logs --follow rw
 docker stop rw
 docker rm rw

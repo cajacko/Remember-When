@@ -67,10 +67,6 @@ RUN wget $GRADLE_URL -O gradle.zip \
 
 ENV PATH="/home/user/gradle/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}"
 
-# setup working directory
-COPY package.json /App/package.json
-COPY yarn.lock /App/yarn.lock
+# Prepare the app dir
+RUN mkdir /App
 WORKDIR /App
-RUN yarn install
-COPY . /App
-# COPY ./template /App/node_modules/@cajacko/template/dist
