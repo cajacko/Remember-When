@@ -11,7 +11,8 @@
     "upgrade": "template upgrade",
     "postinstall": "template postinstall",
     "precommit": "template precommit",
-    "commitmsg": "commit --validate-commit -u"
+    "commitmsg": "commit --validate-commit -u",
+    "docker:deploy": "yarn install && yarn deploy -t main-app --deploy-env alpha-deploygate --android"
   },
   "license": "MIT",
   "jest": {
