@@ -1,9 +1,3 @@
-# set -e
-
-# ./build.sh
-
-# set +e
-
 docker stop rw
 docker rm rw
 
