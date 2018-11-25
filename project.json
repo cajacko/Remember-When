@@ -2,7 +2,7 @@
   "title": "Remember When",
   "slug": "remember-when",
   "version": "0.1.0",
-  "description": "App for recording and sharing the best moments in your life",
+  "description": "App for recording and sharing the best moments in your life.",
   "authorName": "Charlie Jackson",
   "authorUrl": "https://charliejackson.com",
   "authorEmail": "contact@charliejackson.com",
@@ -22,5 +22,5 @@
       "entryFile": "src/graphqlEntry.js"
     }
   },
-  "templateInitVersion": "0.25.7"
+  "templateInitVersion": "0.26.0"
 }
