@@ -120,10 +120,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/lib@3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-3.9.0.tgz#b62f10b8c74a6c20d84c8f5f0f900316364de3ee"
-  integrity sha512-RQ8p3APkPLCa0T9CJn2f9qEVcB1XhByxNN26YnQ4sHJK51cfnFaiQ7cdLSRvIqo7nqaxt/9GD0CTbgr23IpJpg==
+"@cajacko/lib@3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-3.9.1.tgz#dd3451fe26400f0daadaeebb6955ddce57c1fa3d"
+  integrity sha512-IKh8J1vu3B/+9fm5bRtZmG9eDtmpN7KXtJ4mZulTA1oUuOcEhJ8EgkYJgFmtOBS5FQJ9f0HIwNvag/gNNqOlEw==
   dependencies:
     apollo-server-express "2.0.4"
     babel-cli "6.26.0"
@@ -163,10 +163,10 @@
     reselect "3.0.1"
     styled-components "3.3.3"
 
-"@cajacko/template-utils@^0.14.1":
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/@cajacko/template-utils/-/template-utils-0.14.1.tgz#8230c1bfafbd26f4bf053c3262f47ac589dfc68e"
-  integrity sha512-ttrZwndcALdSsrgMuEMWgvuAeRR8+KsLQREDCaPigWJHw2DvvN2RZiVEuqQFnqWFcOh0mKHZgpQ9qtVgqMWSiA==
+"@cajacko/template-utils@^0.14.2":
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/@cajacko/template-utils/-/template-utils-0.14.2.tgz#018ed96d724ddd489e1140aec9dddd36e82a04aa"
+  integrity sha512-UlIYwW+JnPiuuZbQj/wSzFisIck6rfWmQIPLcEXmbZjThu55O8hSP8eNzUS9R4C+pmaVfJYL/DGUUfgYDRpxsg==
   dependencies:
     chalk "^2.4.1"
     commander "^2.17.1"
@@ -181,13 +181,13 @@
     simple-git "^1.96.0"
     watch "^1.0.2"
 
-"@cajacko/template@0.28.0":
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.28.0.tgz#15b42de88e32e489cbcb038c3feb9bf978d0bda0"
-  integrity sha512-fCmHMfZcPkl/vPasBp/iBfrYDXjDFcgYEaNIyctmaYwi0UsnFoiUAMFsOeAL+ziX5fVIogvEOMckfXOEH9XZSQ==
+"@cajacko/template@0.28.1":
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-0.28.1.tgz#60175bf40dc3f26f8af9ba1d28d072465ded2799"
+  integrity sha512-Qtn3OtfWOqdqa+x9JsQWY1lCYbWnzsjXjJIZXmi4F8S6uVOX4q3liyCq4eT8fCQA7gSsN+6+p0K1SyzgTWcdlg==
   dependencies:
     "@babel/polyfill" "^7.0.0"
-    "@cajacko/template-utils" "^0.14.1"
+    "@cajacko/template-utils" "^0.14.2"
     babel-cli "^6.26.0"
     babel-eslint "8.2.2"
     babel-plugin-transform-object-rest-spread "^6.26.0"
