@@ -80,7 +80,7 @@
     "jsdoc": "3.5.5"
   },
   "dependencies": {
-    "@cajacko/lib": "3.9.1",
-    "@cajacko/template": "0.28.1"
+    "@cajacko/lib": "4.0.0",
+    "@cajacko/template": "1.1.0"
   }
 }
