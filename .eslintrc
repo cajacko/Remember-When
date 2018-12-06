@@ -3,6 +3,24 @@
     "airbnb"
   ],
   "rules": {
+    "id-length": [
+      "error",
+      {
+        "min": 3,
+        "max": 24,
+        "exceptions": [
+          "x",
+          "y",
+          "i",
+          "e",
+          "cb",
+          "fs",
+          "id",
+          "db",
+          "is"
+        ]
+      }
+    ],
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1,
     "flowtype/require-valid-file-annotation": [
@@ -28,14 +46,7 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "valid-jsdoc": [
-      "error",
-      {
-        "matchDescription": ".+",
-        "requireParamDescription": true,
-        "requireReturnDescription": true
-      }
-    ],
+    "cajacko/valid-jsdoc": "error",
     "require-jsdoc": [
       "warn",
       {
@@ -116,7 +127,8 @@
   "parser": "babel-eslint",
   "plugins": [
     "jest",
-    "flowtype"
+    "flowtype",
+    "cajacko"
   ],
   "env": {
     "jest/globals": true
