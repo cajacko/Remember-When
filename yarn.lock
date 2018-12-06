@@ -702,10 +702,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@cajacko/lib@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-4.0.0.tgz#d8aa986a630041819f7f71af2ab264cb6134756f"
-  integrity sha512-ldcbpGSHctB583WOHPOa3XBlGdkvnpe7RQKghczkQdVD+YRDTyzK2iORp3Q7rcEZzmfU3FAEfgIzSsXQUDPv3w==
+"@cajacko/lib@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@cajacko/lib/-/lib-4.0.1.tgz#95c55670566f183b0c8761b3473672a57a2a64ae"
+  integrity sha512-Idk9GeeA/yRHpdNC595KWhbgVZ9HcIESlVg3qf4mFEq11+Rh5UzsIIWznuQ3cH88aA2rX/Gi8SXwz6LwDpcxAA==
   dependencies:
     apollo-server-express "2.0.4"
     babel-cli "6.26.0"
@@ -765,10 +765,10 @@
     simple-git "^1.96.0"
     watch "^1.0.2"
 
-"@cajacko/template@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-1.1.0.tgz#ff1c8babb741070189932b0873b36113f5fc1688"
-  integrity sha512-o+12MVOT6xxt8lXS6ti6OFQTQcFxpMcAWPQcIuYCy6LFAuQZXstMGRr9Vp91wblyS7phRb4Q4nrhn1yozNtgtg==
+"@cajacko/template@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@cajacko/template/-/template-1.1.1.tgz#7046465327f43168af8b156511b3b4f383c5f921"
+  integrity sha512-/mUodePj4CDdjjMLv0dtxyfEprOBODFWdr3WNUtRAGGAn9jOOAuwLfiFpQZgPy3eiPYq2yHR0D9Q3COkrhckEw==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@cajacko/template-utils" "^1.1.0"
