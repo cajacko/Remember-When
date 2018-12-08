@@ -1,7 +1,9 @@
 // @flow
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import CardsListItem from '@cajacko/lib/components/Cards/ListItem';
+import Text from '@cajacko/lib/components/Cards/ListItem/Text';
+import CardsListDate from '@cajacko/lib/components/Cards/ListItem/Date';
 
 type Props = {
   action: () => void,
@@ -18,12 +20,17 @@ type Props = {
  * @return {ReactElement} The components markup to render
  */
 const PostsListItem = ({ action, date, content }: Props) => (
-  <CardsListItem
-    withDate
-    action={action}
-    date={date}
-    text={{ _textFromConst: content }}
-  />
+  <CardsListItem action={action}>
+    {({ spacing }) => (
+      <Fragment>
+        <Text
+          text={{ _textFromConst: content }}
+          innerStyles={{ paddingLeft: spacing }}
+        />
+        <CardsListDate date={date} />
+      </Fragment>
+    )}
+  </CardsListItem>
 );
 
 export default PostsListItem;
