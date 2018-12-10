@@ -21,11 +21,11 @@ type Props = {
  */
 const PostsListItem = ({ action, date, content }: Props) => (
   <CardsListItem action={action}>
-    {({ spacing }) => (
+    {({ horizontalSpacing }) => (
       <Fragment>
         <Text
           text={{ _textFromConst: content }}
-          innerStyles={{ paddingLeft: spacing }}
+          innerStyles={{ paddingLeft: horizontalSpacing }}
         />
         <CardsListDate date={date} />
       </Fragment>
