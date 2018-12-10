@@ -51,6 +51,7 @@ const PostsSingle = ({
   setTextAreaRef,
 }: Props) => (
   <HeaderWithContent
+    hasPadding
     header={{
       back: isInEditMode ? null : goBack,
       title: { _textFromConst: format('fullDate', date) },
@@ -72,16 +73,15 @@ const PostsSingle = ({
       onFocus={onTextAreaFocus}
       innerRef={setTextAreaRef}
     />
-    {isInEditMode &&
-      !isNewPost && (
-        <Align centerHorizontally>
-          <Button
-            action={deletePost}
-            text="General.Delete"
-            type={buttons.CONTAINED.SECONDARY}
-          />
-        </Align>
-      )}
+    {isInEditMode && !isNewPost && (
+      <Align centerHorizontally>
+        <Button
+          action={deletePost}
+          text="General.Delete"
+          type={buttons.CONTAINED.SECONDARY}
+        />
+      </Align>
+    )}
   </HeaderWithContent>
 );
 
